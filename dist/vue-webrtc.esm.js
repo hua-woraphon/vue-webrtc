@@ -9157,7 +9157,7 @@ var script$1 = /*#__PURE__*/defineComponent({
       that.log("onPeer");
       peer.addStream(localStream);
       peer.on("stream", remoteStream => {
-        that.joinedRoom(remoteStream, false, shareScreen);
+        that.joinedRoom(remoteStream, false, true);
         peer.on("close", () => {
           var newList = [];
           that.log("stream: ", remoteStream);
@@ -9321,11 +9321,11 @@ function styleInject(css, ref) {
   }
 }
 
-var css_248z$1 = "\n.video-list[data-v-c6b5e2e4] {\n  background: whitesmoke;\n  height: auto;\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  flex-wrap: wrap;\n}\n.video-list div[data-v-c6b5e2e4] {\n  padding: 0px;\n}\n.video-item[data-v-c6b5e2e4] {\n  background: #c5c4c4;\n  display: inline-block;\n}\n";
+var css_248z$1 = "\n.video-list[data-v-801eb06e] {\n  background: whitesmoke;\n  height: auto;\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  flex-wrap: wrap;\n}\n.video-list div[data-v-801eb06e] {\n  padding: 0px;\n}\n.video-item[data-v-801eb06e] {\n  background: #c5c4c4;\n  display: inline-block;\n}\n";
 styleInject(css_248z$1);
 
 script$1.render = render$1;
-script$1.__scopeId = "data-v-c6b5e2e4";
+script$1.__scopeId = "data-v-801eb06e";
 
 var script = /*#__PURE__*/defineComponent({
   name: 'VueWebrtcSample',

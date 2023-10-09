@@ -163,7 +163,7 @@ export default /*#__PURE__*/ defineComponent({
       that.log("onPeer");
       peer.addStream(localStream);
       peer.on("stream", (remoteStream) => {
-        that.joinedRoom(remoteStream, false, shareScreen);
+        that.joinedRoom(remoteStream, false, true);
         peer.on("close", () => {
           var newList = [];
 
