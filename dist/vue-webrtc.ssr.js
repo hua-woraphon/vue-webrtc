@@ -9273,6 +9273,7 @@ var script$1 = /*#__PURE__*/vue.defineComponent({
     return {
       signalClient: null,
       videoList: [],
+      shareScreenList: null,
       canvas: null,
       socket: null
     };
@@ -9459,7 +9460,9 @@ var script$1 = /*#__PURE__*/vue.defineComponent({
         peer.on("close", function () {
           var newList = [];
           that.videoList.forEach(function (item) {
-            if (item.id !== remoteStream.id) {
+            if (item.id !== remoteStream.id && remoteStream.shareScreen) {
+              that.shareScreenList = item;
+            } else if (item.id !== remoteStream.id) {
               newList.push(item);
             }
           });
@@ -9484,7 +9487,11 @@ var script$1 = /*#__PURE__*/vue.defineComponent({
           isLocal: isLocal,
           shareScreen: shareScreen
         };
-        that.videoList.push(video);
+        if (!shareScreen) {
+          that.videoList.push(video);
+        } else {
+          that.shareScreenList = video;
+        }
       }
       setTimeout(function () {
         for (var i = 0, len = that.$refs.videos.length; i < len; i++) {
@@ -9493,7 +9500,7 @@ var script$1 = /*#__PURE__*/vue.defineComponent({
             break;
           }
         }
-      }, 500);
+      }, 1000);
       that.$emit("joined-room", stream.id);
     },
     leave: function leave() {
@@ -9625,9 +9632,9 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
   } else {
     style.appendChild(document.createTextNode(css));
   }
-}var css_248z$1 = "\n.video-list[data-v-0df0a4f0] {\n  background: whitesmoke;\n  height: auto;\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  flex-wrap: wrap;\n}\n.video-list div[data-v-0df0a4f0] {\n  padding: 0px;\n}\n.video-item[data-v-0df0a4f0] {\n  background: #c5c4c4;\n  display: inline-block;\n}\n";
+}var css_248z$1 = "\n.video-list[data-v-0cde4a4a] {\n  background: whitesmoke;\n  height: auto;\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  flex-wrap: wrap;\n}\n.video-list div[data-v-0cde4a4a] {\n  padding: 0px;\n}\n.video-item[data-v-0cde4a4a] {\n  background: #c5c4c4;\n  display: inline-block;\n}\n";
 styleInject(css_248z$1);script$1.render = render$1;
-script$1.__scopeId = "data-v-0df0a4f0";var script = /*#__PURE__*/vue.defineComponent({
+script$1.__scopeId = "data-v-0cde4a4a";var script = /*#__PURE__*/vue.defineComponent({
   name: 'VueWebrtcSample',
   // vue component name
   data: function data() {
