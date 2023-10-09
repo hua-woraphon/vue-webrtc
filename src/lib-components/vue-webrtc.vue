@@ -31,6 +31,7 @@ export default /*#__PURE__*/ defineComponent({
     return {
       signalClient: null,
       videoList: [],
+      shareScreenList: null,
       canvas: null,
       socket: null,
     };
@@ -153,8 +154,11 @@ export default /*#__PURE__*/ defineComponent({
         that.joinedRoom(remoteStream, false, false);
         peer.on("close", () => {
           var newList = [];
+
           that.videoList.forEach(function (item) {
-            if (item.id !== remoteStream.id) {
+            if (item.id !== remoteStream.id && remoteStream.shareScreen) {
+              that.shareScreenList = item;
+            } else if (item.id !== remoteStream.id) {
               newList.push(item);
             }
           });
@@ -180,7 +184,11 @@ export default /*#__PURE__*/ defineComponent({
           shareScreen: shareScreen,
         };
 
-        that.videoList.push(video);
+        if (!shareScreen) {
+          that.videoList.push(video);
+        } else {
+          that.shareScreenList = video;
+        }
       }
 
       setTimeout(function () {
@@ -190,7 +198,7 @@ export default /*#__PURE__*/ defineComponent({
             break;
           }
         }
-      }, 500);
+      }, 1000);
 
       that.$emit("joined-room", stream.id);
     },
