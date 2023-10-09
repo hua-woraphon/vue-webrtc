@@ -1,330 +1,330 @@
-'use strict';var fs=require('fs'),url$1=require('url'),child_process=require('child_process'),http=require('http'),https=require('https'),events=require('events'),net=require('net'),tls=require('tls'),crypto=require('crypto'),stream$1=require('stream'),zlib=require('zlib'),vue=require('vue');function _interopDefaultLegacy(e){return e&&typeof e==='object'&&'default'in e?e:{'default':e}}function _mergeNamespaces(n, m){m.forEach(function(e){e&&typeof e!=='string'&&!Array.isArray(e)&&Object.keys(e).forEach(function(k){if(k!=='default'&&!(k in n)){var d=Object.getOwnPropertyDescriptor(e,k);Object.defineProperty(n,k,d.get?d:{enumerable:true,get:function(){return e[k]}});}})});return Object.freeze(n);}var fs__default=/*#__PURE__*/_interopDefaultLegacy(fs);var url__default=/*#__PURE__*/_interopDefaultLegacy(url$1);var child_process__default=/*#__PURE__*/_interopDefaultLegacy(child_process);var http__default=/*#__PURE__*/_interopDefaultLegacy(http);var https__default=/*#__PURE__*/_interopDefaultLegacy(https);var events__default=/*#__PURE__*/_interopDefaultLegacy(events);var net__default=/*#__PURE__*/_interopDefaultLegacy(net);var tls__default=/*#__PURE__*/_interopDefaultLegacy(tls);var crypto__default=/*#__PURE__*/_interopDefaultLegacy(crypto);var stream__default=/*#__PURE__*/_interopDefaultLegacy(stream$1);var zlib__default=/*#__PURE__*/_interopDefaultLegacy(zlib);function _iterableToArrayLimit(arr, i) {
-  var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"];
-  if (null != _i) {
-    var _s,
-      _e,
-      _x,
-      _r,
-      _arr = [],
-      _n = !0,
-      _d = !1;
+'use strict';var fs=require('fs'),url$1=require('url'),child_process=require('child_process'),http=require('http'),https=require('https'),events=require('events'),net=require('net'),tls=require('tls'),crypto=require('crypto'),stream$1=require('stream'),zlib=require('zlib'),vue=require('vue');function _interopDefaultLegacy(e){return e&&typeof e==='object'&&'default'in e?e:{'default':e}}function _mergeNamespaces(n, m){m.forEach(function(e){e&&typeof e!=='string'&&!Array.isArray(e)&&Object.keys(e).forEach(function(k){if(k!=='default'&&!(k in n)){var d=Object.getOwnPropertyDescriptor(e,k);Object.defineProperty(n,k,d.get?d:{enumerable:true,get:function(){return e[k]}});}})});return Object.freeze(n);}var fs__default=/*#__PURE__*/_interopDefaultLegacy(fs);var url__default=/*#__PURE__*/_interopDefaultLegacy(url$1);var child_process__default=/*#__PURE__*/_interopDefaultLegacy(child_process);var http__default=/*#__PURE__*/_interopDefaultLegacy(http);var https__default=/*#__PURE__*/_interopDefaultLegacy(https);var events__default=/*#__PURE__*/_interopDefaultLegacy(events);var net__default=/*#__PURE__*/_interopDefaultLegacy(net);var tls__default=/*#__PURE__*/_interopDefaultLegacy(tls);var crypto__default=/*#__PURE__*/_interopDefaultLegacy(crypto);var stream__default=/*#__PURE__*/_interopDefaultLegacy(stream$1);var zlib__default=/*#__PURE__*/_interopDefaultLegacy(zlib);function _iterableToArrayLimit(r, l) {
+  var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"];
+  if (null != t) {
+    var e,
+      n,
+      i,
+      u,
+      a = [],
+      f = !0,
+      o = !1;
     try {
-      if (_x = (_i = _i.call(arr)).next, 0 === i) {
-        if (Object(_i) !== _i) return;
-        _n = !1;
-      } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0);
-    } catch (err) {
-      _d = !0, _e = err;
+      if (i = (t = t.call(r)).next, 0 === l) {
+        if (Object(t) !== t) return;
+        f = !1;
+      } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0);
+    } catch (r) {
+      o = !0, n = r;
     } finally {
       try {
-        if (!_n && null != _i.return && (_r = _i.return(), Object(_r) !== _r)) return;
+        if (!f && null != t.return && (u = t.return(), Object(u) !== u)) return;
       } finally {
-        if (_d) throw _e;
+        if (o) throw n;
       }
     }
-    return _arr;
+    return a;
   }
 }
 function _regeneratorRuntime() {
   _regeneratorRuntime = function () {
-    return exports;
+    return e;
   };
-  var exports = {},
-    Op = Object.prototype,
-    hasOwn = Op.hasOwnProperty,
-    defineProperty = Object.defineProperty || function (obj, key, desc) {
-      obj[key] = desc.value;
+  var t,
+    e = {},
+    r = Object.prototype,
+    n = r.hasOwnProperty,
+    o = Object.defineProperty || function (t, e, r) {
+      t[e] = r.value;
     },
-    $Symbol = "function" == typeof Symbol ? Symbol : {},
-    iteratorSymbol = $Symbol.iterator || "@@iterator",
-    asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator",
-    toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag";
-  function define(obj, key, value) {
-    return Object.defineProperty(obj, key, {
-      value: value,
+    i = "function" == typeof Symbol ? Symbol : {},
+    a = i.iterator || "@@iterator",
+    c = i.asyncIterator || "@@asyncIterator",
+    u = i.toStringTag || "@@toStringTag";
+  function define(t, e, r) {
+    return Object.defineProperty(t, e, {
+      value: r,
       enumerable: !0,
       configurable: !0,
       writable: !0
-    }), obj[key];
+    }), t[e];
   }
   try {
     define({}, "");
-  } catch (err) {
-    define = function (obj, key, value) {
-      return obj[key] = value;
+  } catch (t) {
+    define = function (t, e, r) {
+      return t[e] = r;
     };
   }
-  function wrap(innerFn, outerFn, self, tryLocsList) {
-    var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator,
-      generator = Object.create(protoGenerator.prototype),
-      context = new Context(tryLocsList || []);
-    return defineProperty(generator, "_invoke", {
-      value: makeInvokeMethod(innerFn, self, context)
-    }), generator;
+  function wrap(t, e, r, n) {
+    var i = e && e.prototype instanceof Generator ? e : Generator,
+      a = Object.create(i.prototype),
+      c = new Context(n || []);
+    return o(a, "_invoke", {
+      value: makeInvokeMethod(t, r, c)
+    }), a;
   }
-  function tryCatch(fn, obj, arg) {
+  function tryCatch(t, e, r) {
     try {
       return {
         type: "normal",
-        arg: fn.call(obj, arg)
+        arg: t.call(e, r)
       };
-    } catch (err) {
+    } catch (t) {
       return {
         type: "throw",
-        arg: err
+        arg: t
       };
     }
   }
-  exports.wrap = wrap;
-  var ContinueSentinel = {};
+  e.wrap = wrap;
+  var h = "suspendedStart",
+    l = "suspendedYield",
+    f = "executing",
+    s = "completed",
+    y = {};
   function Generator() {}
   function GeneratorFunction() {}
   function GeneratorFunctionPrototype() {}
-  var IteratorPrototype = {};
-  define(IteratorPrototype, iteratorSymbol, function () {
+  var p = {};
+  define(p, a, function () {
     return this;
   });
-  var getProto = Object.getPrototypeOf,
-    NativeIteratorPrototype = getProto && getProto(getProto(values([])));
-  NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype);
-  var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype);
-  function defineIteratorMethods(prototype) {
-    ["next", "throw", "return"].forEach(function (method) {
-      define(prototype, method, function (arg) {
-        return this._invoke(method, arg);
+  var d = Object.getPrototypeOf,
+    v = d && d(d(values([])));
+  v && v !== r && n.call(v, a) && (p = v);
+  var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p);
+  function defineIteratorMethods(t) {
+    ["next", "throw", "return"].forEach(function (e) {
+      define(t, e, function (t) {
+        return this._invoke(e, t);
       });
     });
   }
-  function AsyncIterator(generator, PromiseImpl) {
-    function invoke(method, arg, resolve, reject) {
-      var record = tryCatch(generator[method], generator, arg);
-      if ("throw" !== record.type) {
-        var result = record.arg,
-          value = result.value;
-        return value && "object" == typeof value && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) {
-          invoke("next", value, resolve, reject);
-        }, function (err) {
-          invoke("throw", err, resolve, reject);
-        }) : PromiseImpl.resolve(value).then(function (unwrapped) {
-          result.value = unwrapped, resolve(result);
-        }, function (error) {
-          return invoke("throw", error, resolve, reject);
+  function AsyncIterator(t, e) {
+    function invoke(r, o, i, a) {
+      var c = tryCatch(t[r], t, o);
+      if ("throw" !== c.type) {
+        var u = c.arg,
+          h = u.value;
+        return h && "object" == typeof h && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) {
+          invoke("next", t, i, a);
+        }, function (t) {
+          invoke("throw", t, i, a);
+        }) : e.resolve(h).then(function (t) {
+          u.value = t, i(u);
+        }, function (t) {
+          return invoke("throw", t, i, a);
         });
       }
-      reject(record.arg);
+      a(c.arg);
     }
-    var previousPromise;
-    defineProperty(this, "_invoke", {
-      value: function (method, arg) {
+    var r;
+    o(this, "_invoke", {
+      value: function (t, n) {
         function callInvokeWithMethodAndArg() {
-          return new PromiseImpl(function (resolve, reject) {
-            invoke(method, arg, resolve, reject);
+          return new e(function (e, r) {
+            invoke(t, n, e, r);
           });
         }
-        return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg();
+        return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg();
       }
     });
   }
-  function makeInvokeMethod(innerFn, self, context) {
-    var state = "suspendedStart";
-    return function (method, arg) {
-      if ("executing" === state) throw new Error("Generator is already running");
-      if ("completed" === state) {
-        if ("throw" === method) throw arg;
-        return doneResult();
+  function makeInvokeMethod(e, r, n) {
+    var o = h;
+    return function (i, a) {
+      if (o === f) throw new Error("Generator is already running");
+      if (o === s) {
+        if ("throw" === i) throw a;
+        return {
+          value: t,
+          done: !0
+        };
       }
-      for (context.method = method, context.arg = arg;;) {
-        var delegate = context.delegate;
-        if (delegate) {
-          var delegateResult = maybeInvokeDelegate(delegate, context);
-          if (delegateResult) {
-            if (delegateResult === ContinueSentinel) continue;
-            return delegateResult;
+      for (n.method = i, n.arg = a;;) {
+        var c = n.delegate;
+        if (c) {
+          var u = maybeInvokeDelegate(c, n);
+          if (u) {
+            if (u === y) continue;
+            return u;
           }
         }
-        if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) {
-          if ("suspendedStart" === state) throw state = "completed", context.arg;
-          context.dispatchException(context.arg);
-        } else "return" === context.method && context.abrupt("return", context.arg);
-        state = "executing";
-        var record = tryCatch(innerFn, self, context);
-        if ("normal" === record.type) {
-          if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue;
+        if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) {
+          if (o === h) throw o = s, n.arg;
+          n.dispatchException(n.arg);
+        } else "return" === n.method && n.abrupt("return", n.arg);
+        o = f;
+        var p = tryCatch(e, r, n);
+        if ("normal" === p.type) {
+          if (o = n.done ? s : l, p.arg === y) continue;
           return {
-            value: record.arg,
-            done: context.done
+            value: p.arg,
+            done: n.done
           };
         }
-        "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg);
+        "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg);
       }
     };
   }
-  function maybeInvokeDelegate(delegate, context) {
-    var methodName = context.method,
-      method = delegate.iterator[methodName];
-    if (undefined === method) return context.delegate = null, "throw" === methodName && delegate.iterator.return && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method) || "return" !== methodName && (context.method = "throw", context.arg = new TypeError("The iterator does not provide a '" + methodName + "' method")), ContinueSentinel;
-    var record = tryCatch(method, delegate.iterator, context.arg);
-    if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel;
-    var info = record.arg;
-    return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel);
+  function maybeInvokeDelegate(e, r) {
+    var n = r.method,
+      o = e.iterator[n];
+    if (o === t) return r.delegate = null, "throw" === n && e.iterator.return && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y;
+    var i = tryCatch(o, e.iterator, r.arg);
+    if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y;
+    var a = i.arg;
+    return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y);
   }
-  function pushTryEntry(locs) {
-    var entry = {
-      tryLoc: locs[0]
+  function pushTryEntry(t) {
+    var e = {
+      tryLoc: t[0]
     };
-    1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry);
+    1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e);
   }
-  function resetTryEntry(entry) {
-    var record = entry.completion || {};
-    record.type = "normal", delete record.arg, entry.completion = record;
+  function resetTryEntry(t) {
+    var e = t.completion || {};
+    e.type = "normal", delete e.arg, t.completion = e;
   }
-  function Context(tryLocsList) {
+  function Context(t) {
     this.tryEntries = [{
       tryLoc: "root"
-    }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0);
+    }], t.forEach(pushTryEntry, this), this.reset(!0);
   }
-  function values(iterable) {
-    if (iterable) {
-      var iteratorMethod = iterable[iteratorSymbol];
-      if (iteratorMethod) return iteratorMethod.call(iterable);
-      if ("function" == typeof iterable.next) return iterable;
-      if (!isNaN(iterable.length)) {
-        var i = -1,
-          next = function next() {
-            for (; ++i < iterable.length;) if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next;
-            return next.value = undefined, next.done = !0, next;
+  function values(e) {
+    if (e || "" === e) {
+      var r = e[a];
+      if (r) return r.call(e);
+      if ("function" == typeof e.next) return e;
+      if (!isNaN(e.length)) {
+        var o = -1,
+          i = function next() {
+            for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next;
+            return next.value = t, next.done = !0, next;
           };
-        return next.next = next;
+        return i.next = i;
       }
     }
-    return {
-      next: doneResult
-    };
+    throw new TypeError(typeof e + " is not iterable");
   }
-  function doneResult() {
-    return {
-      value: undefined,
-      done: !0
-    };
-  }
-  return GeneratorFunction.prototype = GeneratorFunctionPrototype, defineProperty(Gp, "constructor", {
+  return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", {
     value: GeneratorFunctionPrototype,
     configurable: !0
-  }), defineProperty(GeneratorFunctionPrototype, "constructor", {
+  }), o(GeneratorFunctionPrototype, "constructor", {
     value: GeneratorFunction,
     configurable: !0
-  }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) {
-    var ctor = "function" == typeof genFun && genFun.constructor;
-    return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name));
-  }, exports.mark = function (genFun) {
-    return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun;
-  }, exports.awrap = function (arg) {
+  }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) {
+    var e = "function" == typeof t && t.constructor;
+    return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name));
+  }, e.mark = function (t) {
+    return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t;
+  }, e.awrap = function (t) {
     return {
-      __await: arg
+      __await: t
     };
-  }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () {
+  }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () {
     return this;
-  }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) {
-    void 0 === PromiseImpl && (PromiseImpl = Promise);
-    var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl);
-    return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) {
-      return result.done ? result.value : iter.next();
+  }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) {
+    void 0 === i && (i = Promise);
+    var a = new AsyncIterator(wrap(t, r, n, o), i);
+    return e.isGeneratorFunction(r) ? a : a.next().then(function (t) {
+      return t.done ? t.value : a.next();
     });
-  }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () {
+  }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () {
     return this;
-  }), define(Gp, "toString", function () {
+  }), define(g, "toString", function () {
     return "[object Generator]";
-  }), exports.keys = function (val) {
-    var object = Object(val),
-      keys = [];
-    for (var key in object) keys.push(key);
-    return keys.reverse(), function next() {
-      for (; keys.length;) {
-        var key = keys.pop();
-        if (key in object) return next.value = key, next.done = !1, next;
+  }), e.keys = function (t) {
+    var e = Object(t),
+      r = [];
+    for (var n in e) r.push(n);
+    return r.reverse(), function next() {
+      for (; r.length;) {
+        var t = r.pop();
+        if (t in e) return next.value = t, next.done = !1, next;
       }
       return next.done = !0, next;
     };
-  }, exports.values = values, Context.prototype = {
+  }, e.values = values, Context.prototype = {
     constructor: Context,
-    reset: function (skipTempReset) {
-      if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined);
+    reset: function (e) {
+      if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t);
     },
     stop: function () {
       this.done = !0;
-      var rootRecord = this.tryEntries[0].completion;
-      if ("throw" === rootRecord.type) throw rootRecord.arg;
+      var t = this.tryEntries[0].completion;
+      if ("throw" === t.type) throw t.arg;
       return this.rval;
     },
-    dispatchException: function (exception) {
-      if (this.done) throw exception;
-      var context = this;
-      function handle(loc, caught) {
-        return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught;
+    dispatchException: function (e) {
+      if (this.done) throw e;
+      var r = this;
+      function handle(n, o) {
+        return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o;
       }
-      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
-        var entry = this.tryEntries[i],
-          record = entry.completion;
-        if ("root" === entry.tryLoc) return handle("end");
-        if (entry.tryLoc <= this.prev) {
-          var hasCatch = hasOwn.call(entry, "catchLoc"),
-            hasFinally = hasOwn.call(entry, "finallyLoc");
-          if (hasCatch && hasFinally) {
-            if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0);
-            if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc);
-          } else if (hasCatch) {
-            if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0);
+      for (var o = this.tryEntries.length - 1; o >= 0; --o) {
+        var i = this.tryEntries[o],
+          a = i.completion;
+        if ("root" === i.tryLoc) return handle("end");
+        if (i.tryLoc <= this.prev) {
+          var c = n.call(i, "catchLoc"),
+            u = n.call(i, "finallyLoc");
+          if (c && u) {
+            if (this.prev < i.catchLoc) return handle(i.catchLoc, !0);
+            if (this.prev < i.finallyLoc) return handle(i.finallyLoc);
+          } else if (c) {
+            if (this.prev < i.catchLoc) return handle(i.catchLoc, !0);
           } else {
-            if (!hasFinally) throw new Error("try statement without catch or finally");
-            if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc);
+            if (!u) throw new Error("try statement without catch or finally");
+            if (this.prev < i.finallyLoc) return handle(i.finallyLoc);
           }
         }
       }
     },
-    abrupt: function (type, arg) {
-      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
-        var entry = this.tryEntries[i];
-        if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) {
-          var finallyEntry = entry;
+    abrupt: function (t, e) {
+      for (var r = this.tryEntries.length - 1; r >= 0; --r) {
+        var o = this.tryEntries[r];
+        if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) {
+          var i = o;
           break;
         }
       }
-      finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null);
-      var record = finallyEntry ? finallyEntry.completion : {};
-      return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record);
+      i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null);
+      var a = i ? i.completion : {};
+      return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a);
     },
-    complete: function (record, afterLoc) {
-      if ("throw" === record.type) throw record.arg;
-      return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel;
+    complete: function (t, e) {
+      if ("throw" === t.type) throw t.arg;
+      return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y;
     },
-    finish: function (finallyLoc) {
-      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
-        var entry = this.tryEntries[i];
-        if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel;
+    finish: function (t) {
+      for (var e = this.tryEntries.length - 1; e >= 0; --e) {
+        var r = this.tryEntries[e];
+        if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y;
       }
     },
-    catch: function (tryLoc) {
-      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
-        var entry = this.tryEntries[i];
-        if (entry.tryLoc === tryLoc) {
-          var record = entry.completion;
-          if ("throw" === record.type) {
-            var thrown = record.arg;
-            resetTryEntry(entry);
+    catch: function (t) {
+      for (var e = this.tryEntries.length - 1; e >= 0; --e) {
+        var r = this.tryEntries[e];
+        if (r.tryLoc === t) {
+          var n = r.completion;
+          if ("throw" === n.type) {
+            var o = n.arg;
+            resetTryEntry(r);
           }
-          return thrown;
+          return o;
         }
       }
       throw new Error("illegal catch attempt");
     },
-    delegateYield: function (iterable, resultName, nextLoc) {
+    delegateYield: function (e, r, n) {
       return this.delegate = {
-        iterator: values(iterable),
-        resultName: resultName,
-        nextLoc: nextLoc
-      }, "next" === this.method && (this.arg = undefined), ContinueSentinel;
+        iterator: values(e),
+        resultName: r,
+        nextLoc: n
+      }, "next" === this.method && (this.arg = t), y;
     }
-  }, exports;
+  }, e;
 }
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
   try {
@@ -391,14 +391,14 @@ Object.keys(PACKET_TYPES).forEach(key => {
 });
 const ERROR_PACKET = { type: "error", data: "parser error" };const encodePacket = ({ type, data }, supportsBinary, callback) => {
     if (data instanceof ArrayBuffer || ArrayBuffer.isView(data)) {
-        const buffer = toBuffer$2(data);
-        return callback(encodeBuffer(buffer, supportsBinary));
+        return callback(supportsBinary ? data : "b" + toBuffer$2(data, true).toString("base64"));
     }
     // plain string
     return callback(PACKET_TYPES[type] + (data || ""));
 };
-const toBuffer$2 = data => {
-    if (Buffer.isBuffer(data)) {
+const toBuffer$2 = (data, forceBufferConversion) => {
+    if (Buffer.isBuffer(data) ||
+        (data instanceof Uint8Array && !forceBufferConversion)) {
         return data;
     }
     else if (data instanceof ArrayBuffer) {
@@ -408,10 +408,19 @@ const toBuffer$2 = data => {
         return Buffer.from(data.buffer, data.byteOffset, data.byteLength);
     }
 };
-// only 'message' packets can contain binary, so the type prefix is not needed
-const encodeBuffer = (data, supportsBinary) => {
-    return supportsBinary ? data : "b" + data.toString("base64");
-};const decodePacket = (encodedPacket, binaryType) => {
+let TEXT_ENCODER;
+function encodePacketToBinary(packet, callback) {
+    if (packet.data instanceof ArrayBuffer || ArrayBuffer.isView(packet.data)) {
+        return callback(toBuffer$2(packet.data, false));
+    }
+    encodePacket(packet, true, encoded => {
+        if (!TEXT_ENCODER) {
+            // lazily created for compatibility with Node.js 10
+            TEXT_ENCODER = new TextEncoder();
+        }
+        callback(TEXT_ENCODER.encode(encoded));
+    });
+}const decodePacket = (encodedPacket, binaryType) => {
     if (typeof encodedPacket !== "string") {
         return {
             type: "message",
@@ -439,22 +448,31 @@ const encodeBuffer = (data, supportsBinary) => {
         };
 };
 const mapBinary = (data, binaryType) => {
-    const isBuffer = Buffer.isBuffer(data);
     switch (binaryType) {
         case "arraybuffer":
-            return isBuffer ? toArrayBuffer$1(data) : data;
+            if (data instanceof ArrayBuffer) {
+                // from WebSocket & binaryType "arraybuffer"
+                return data;
+            }
+            else if (Buffer.isBuffer(data)) {
+                // from HTTP long-polling
+                return data.buffer.slice(data.byteOffset, data.byteOffset + data.byteLength);
+            }
+            else {
+                // from WebTransport (Uint8Array)
+                return data.buffer;
+            }
         case "nodebuffer":
         default:
-            return data; // assuming the data is already a Buffer
+            if (Buffer.isBuffer(data)) {
+                // from HTTP long-polling or WebSocket & binaryType "nodebuffer" (default)
+                return data;
+            }
+            else {
+                // from WebTransport (Uint8Array)
+                return Buffer.from(data);
+            }
     }
-};
-const toArrayBuffer$1 = (buffer) => {
-    const arrayBuffer = new ArrayBuffer(buffer.length);
-    const view = new Uint8Array(arrayBuffer);
-    for (let i = 0; i < buffer.length; i++) {
-        view[i] = buffer[i];
-    }
-    return arrayBuffer;
 };const SEPARATOR = String.fromCharCode(30); // see https://en.wikipedia.org/wiki/Delimiter#ASCII_delimited_text
 const encodePayload = (packets, callback) => {
     // some packets may be added to the array while encoding, so the initial length must be saved
@@ -483,6 +501,129 @@ const decodePayload = (encodedPayload, binaryType) => {
     }
     return packets;
 };
+function createPacketEncoderStream() {
+    return new TransformStream({
+        transform(packet, controller) {
+            encodePacketToBinary(packet, encodedPacket => {
+                const payloadLength = encodedPacket.length;
+                let header;
+                // inspired by the WebSocket format: https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API/Writing_WebSocket_servers#decoding_payload_length
+                if (payloadLength < 126) {
+                    header = new Uint8Array(1);
+                    new DataView(header.buffer).setUint8(0, payloadLength);
+                }
+                else if (payloadLength < 65536) {
+                    header = new Uint8Array(3);
+                    const view = new DataView(header.buffer);
+                    view.setUint8(0, 126);
+                    view.setUint16(1, payloadLength);
+                }
+                else {
+                    header = new Uint8Array(9);
+                    const view = new DataView(header.buffer);
+                    view.setUint8(0, 127);
+                    view.setBigUint64(1, BigInt(payloadLength));
+                }
+                // first bit indicates whether the payload is plain text (0) or binary (1)
+                if (packet.data && typeof packet.data !== "string") {
+                    header[0] |= 0x80;
+                }
+                controller.enqueue(header);
+                controller.enqueue(encodedPacket);
+            });
+        }
+    });
+}
+let TEXT_DECODER;
+function totalLength(chunks) {
+    return chunks.reduce((acc, chunk) => acc + chunk.length, 0);
+}
+function concatChunks(chunks, size) {
+    if (chunks[0].length === size) {
+        return chunks.shift();
+    }
+    const buffer = new Uint8Array(size);
+    let j = 0;
+    for (let i = 0; i < size; i++) {
+        buffer[i] = chunks[0][j++];
+        if (j === chunks[0].length) {
+            chunks.shift();
+            j = 0;
+        }
+    }
+    if (chunks.length && j < chunks[0].length) {
+        chunks[0] = chunks[0].slice(j);
+    }
+    return buffer;
+}
+function createPacketDecoderStream(maxPayload, binaryType) {
+    if (!TEXT_DECODER) {
+        TEXT_DECODER = new TextDecoder();
+    }
+    const chunks = [];
+    let state = 0 /* READ_HEADER */;
+    let expectedLength = -1;
+    let isBinary = false;
+    return new TransformStream({
+        transform(chunk, controller) {
+            chunks.push(chunk);
+            while (true) {
+                if (state === 0 /* READ_HEADER */) {
+                    if (totalLength(chunks) < 1) {
+                        break;
+                    }
+                    const header = concatChunks(chunks, 1);
+                    isBinary = (header[0] & 0x80) === 0x80;
+                    expectedLength = header[0] & 0x7f;
+                    if (expectedLength < 126) {
+                        state = 3 /* READ_PAYLOAD */;
+                    }
+                    else if (expectedLength === 126) {
+                        state = 1 /* READ_EXTENDED_LENGTH_16 */;
+                    }
+                    else {
+                        state = 2 /* READ_EXTENDED_LENGTH_64 */;
+                    }
+                }
+                else if (state === 1 /* READ_EXTENDED_LENGTH_16 */) {
+                    if (totalLength(chunks) < 2) {
+                        break;
+                    }
+                    const headerArray = concatChunks(chunks, 2);
+                    expectedLength = new DataView(headerArray.buffer, headerArray.byteOffset, headerArray.length).getUint16(0);
+                    state = 3 /* READ_PAYLOAD */;
+                }
+                else if (state === 2 /* READ_EXTENDED_LENGTH_64 */) {
+                    if (totalLength(chunks) < 8) {
+                        break;
+                    }
+                    const headerArray = concatChunks(chunks, 8);
+                    const view = new DataView(headerArray.buffer, headerArray.byteOffset, headerArray.length);
+                    const n = view.getUint32(0);
+                    if (n > Math.pow(2, 53 - 32) - 1) {
+                        // the maximum safe integer in JavaScript is 2^53 - 1
+                        controller.enqueue(ERROR_PACKET);
+                        break;
+                    }
+                    expectedLength = n * Math.pow(2, 32) + view.getUint32(4);
+                    state = 3 /* READ_PAYLOAD */;
+                }
+                else {
+                    if (totalLength(chunks) < expectedLength) {
+                        break;
+                    }
+                    const data = concatChunks(chunks, expectedLength);
+                    controller.enqueue(decodePacket(isBinary ? data : TEXT_DECODER.decode(data), binaryType));
+                    state = 0 /* READ_HEADER */;
+                }
+                if (expectedLength === 0 || expectedLength > maxPayload) {
+                    controller.enqueue(ERROR_PACKET);
+                    break;
+                }
+            }
+        }
+    });
+}
 const protocol$1 = 4;/**
  * Initialize a new `Emitter`.
  *
@@ -660,16 +801,16 @@ Emitter.prototype.hasListeners = function(event){
     }, {});
 }
 // Keep a reference to the real timeout functions so they can be used when overridden
-const NATIVE_SET_TIMEOUT = setTimeout;
-const NATIVE_CLEAR_TIMEOUT = clearTimeout;
+const NATIVE_SET_TIMEOUT = globalThisShim.setTimeout;
+const NATIVE_CLEAR_TIMEOUT = globalThisShim.clearTimeout;
 function installTimerFunctions(obj, opts) {
     if (opts.useNativeTimers) {
         obj.setTimeoutFn = NATIVE_SET_TIMEOUT.bind(globalThisShim);
         obj.clearTimeoutFn = NATIVE_CLEAR_TIMEOUT.bind(globalThisShim);
     }
     else {
-        obj.setTimeoutFn = setTimeout.bind(globalThisShim);
-        obj.clearTimeoutFn = clearTimeout.bind(globalThisShim);
+        obj.setTimeoutFn = globalThisShim.setTimeout.bind(globalThisShim);
+        obj.clearTimeoutFn = globalThisShim.clearTimeout.bind(globalThisShim);
     }
 }
 // base64 encoded buffers are about 33% bigger (https://en.wikipedia.org/wiki/Base64)
@@ -701,150 +842,7 @@ function utf8Length(str) {
         }
     }
     return length;
-}class TransportError extends Error {
-    constructor(reason, description, context) {
-        super(reason);
-        this.description = description;
-        this.context = context;
-        this.type = "TransportError";
-    }
-}
-class Transport extends Emitter {
-    /**
-     * Transport abstract constructor.
-     *
-     * @param {Object} options.
-     * @api private
-     */
-    constructor(opts) {
-        super();
-        this.writable = false;
-        installTimerFunctions(this, opts);
-        this.opts = opts;
-        this.query = opts.query;
-        this.readyState = "";
-        this.socket = opts.socket;
-    }
-    /**
-     * Emits an error.
-     *
-     * @param {String} reason
-     * @param description
-     * @param context - the error context
-     * @return {Transport} for chaining
-     * @api protected
-     */
-    onError(reason, description, context) {
-        super.emitReserved("error", new TransportError(reason, description, context));
-        return this;
-    }
-    /**
-     * Opens the transport.
-     *
-     * @api public
-     */
-    open() {
-        if ("closed" === this.readyState || "" === this.readyState) {
-            this.readyState = "opening";
-            this.doOpen();
-        }
-        return this;
-    }
-    /**
-     * Closes the transport.
-     *
-     * @api public
-     */
-    close() {
-        if ("opening" === this.readyState || "open" === this.readyState) {
-            this.doClose();
-            this.onClose();
-        }
-        return this;
-    }
-    /**
-     * Sends multiple packets.
-     *
-     * @param {Array} packets
-     * @api public
-     */
-    send(packets) {
-        if ("open" === this.readyState) {
-            this.write(packets);
-        }
-    }
-    /**
-     * Called upon open
-     *
-     * @api protected
-     */
-    onOpen() {
-        this.readyState = "open";
-        this.writable = true;
-        super.emitReserved("open");
-    }
-    /**
-     * Called with data.
-     *
-     * @param {String} data
-     * @api protected
-     */
-    onData(data) {
-        const packet = decodePacket(data, this.socket.binaryType);
-        this.onPacket(packet);
-    }
-    /**
-     * Called with a decoded packet.
-     *
-     * @api protected
-     */
-    onPacket(packet) {
-        super.emitReserved("packet", packet);
-    }
-    /**
-     * Called upon close.
-     *
-     * @api protected
-     */
-    onClose(details) {
-        this.readyState = "closed";
-        super.emitReserved("close", details);
-    }
-}// imported from https://github.com/unshiftio/yeast
-const alphabet = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_'.split(''), length = 64, map = {};
-let seed = 0, i = 0, prev;
-/**
- * Return a string representing the specified number.
- *
- * @param {Number} num The number to convert.
- * @returns {String} The string representation of the number.
- * @api public
- */
-function encode$1(num) {
-    let encoded = '';
-    do {
-        encoded = alphabet[num % length] + encoded;
-        num = Math.floor(num / length);
-    } while (num > 0);
-    return encoded;
-}
-/**
- * Yeast: A tiny growing id generator.
- *
- * @returns {String} A unique id.
- * @api public
- */
-function yeast() {
-    const now = encode$1(+new Date());
-    if (now !== prev)
-        return seed = 0, prev = now;
-    return now + '.' + encode$1(seed++);
-}
-//
-// Map each character to its index.
-//
-for (; i < length; i++)
-    map[alphabet[i]] = i;// imported from https://github.com/galkn/querystring
+}// imported from https://github.com/galkn/querystring
 /**
  * Compiles a querystring
  * Returns string representation of the object
@@ -852,7 +850,7 @@ for (; i < length; i++)
  * @param {Object}
  * @api private
  */
-function encode(obj) {
+function encode$1(obj) {
     let str = '';
     for (let i in obj) {
         if (obj.hasOwnProperty(i)) {
@@ -877,7 +875,174 @@ function decode(qs) {
         qry[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1]);
     }
     return qry;
-}/**
+}class TransportError extends Error {
+    constructor(reason, description, context) {
+        super(reason);
+        this.description = description;
+        this.context = context;
+        this.type = "TransportError";
+    }
+}
+class Transport extends Emitter {
+    /**
+     * Transport abstract constructor.
+     *
+     * @param {Object} opts - options
+     * @protected
+     */
+    constructor(opts) {
+        super();
+        this.writable = false;
+        installTimerFunctions(this, opts);
+        this.opts = opts;
+        this.query = opts.query;
+        this.socket = opts.socket;
+    }
+    /**
+     * Emits an error.
+     *
+     * @param {String} reason
+     * @param description
+     * @param context - the error context
+     * @return {Transport} for chaining
+     * @protected
+     */
+    onError(reason, description, context) {
+        super.emitReserved("error", new TransportError(reason, description, context));
+        return this;
+    }
+    /**
+     * Opens the transport.
+     */
+    open() {
+        this.readyState = "opening";
+        this.doOpen();
+        return this;
+    }
+    /**
+     * Closes the transport.
+     */
+    close() {
+        if (this.readyState === "opening" || this.readyState === "open") {
+            this.doClose();
+            this.onClose();
+        }
+        return this;
+    }
+    /**
+     * Sends multiple packets.
+     *
+     * @param {Array} packets
+     */
+    send(packets) {
+        if (this.readyState === "open") {
+            this.write(packets);
+        }
+    }
+    /**
+     * Called upon open
+     *
+     * @protected
+     */
+    onOpen() {
+        this.readyState = "open";
+        this.writable = true;
+        super.emitReserved("open");
+    }
+    /**
+     * Called with data.
+     *
+     * @param {String} data
+     * @protected
+     */
+    onData(data) {
+        const packet = decodePacket(data, this.socket.binaryType);
+        this.onPacket(packet);
+    }
+    /**
+     * Called with a decoded packet.
+     *
+     * @protected
+     */
+    onPacket(packet) {
+        super.emitReserved("packet", packet);
+    }
+    /**
+     * Called upon close.
+     *
+     * @protected
+     */
+    onClose(details) {
+        this.readyState = "closed";
+        super.emitReserved("close", details);
+    }
+    /**
+     * Pauses the transport, in order not to lose packets during an upgrade.
+     *
+     * @param onPause
+     */
+    pause(onPause) { }
+    createUri(schema, query = {}) {
+        return (schema +
+            "://" +
+            this._hostname() +
+            this._port() +
+            this.opts.path +
+            this._query(query));
+    }
+    _hostname() {
+        const hostname = this.opts.hostname;
+        return hostname.indexOf(":") === -1 ? hostname : "[" + hostname + "]";
+    }
+    _port() {
+        if (this.opts.port &&
+            ((this.opts.secure && Number(this.opts.port !== 443)) ||
+                (!this.opts.secure && Number(this.opts.port) !== 80))) {
+            return ":" + this.opts.port;
+        }
+        else {
+            return "";
+        }
+    }
+    _query(query) {
+        const encodedQuery = encode$1(query);
+        return encodedQuery.length ? "?" + encodedQuery : "";
+    }
+}// imported from https://github.com/unshiftio/yeast
+const alphabet = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_'.split(''), length = 64, map = {};
+let seed = 0, i = 0, prev;
+/**
+ * Return a string representing the specified number.
+ *
+ * @param {Number} num The number to convert.
+ * @returns {String} The string representation of the number.
+ * @api public
+ */
+function encode(num) {
+    let encoded = '';
+    do {
+        encoded = alphabet[num % length] + encoded;
+        num = Math.floor(num / length);
+    } while (num > 0);
+    return encoded;
+}
+/**
+ * Yeast: A tiny growing id generator.
+ *
+ * @returns {String} A unique id.
+ * @api public
+ */
+function yeast() {
+    const now = encode(+new Date());
+    if (now !== prev)
+        return seed = 0, prev = now;
+    return now + '.' + encode(seed++);
+}
+//
+// Map each character to its index.
+//
+for (; i < length; i++)
+    map[alphabet[i]] = i;/**
  * Wrapper for built-in http.js to emulate the browser XMLHttpRequest object.
  *
  * This can be used with JS designed for browsers to improve reuse of code and
@@ -1547,10 +1712,89 @@ function XMLHttpRequest(opts) {
       self.dispatchEvent("loadend");
     }
   };
-}var XMLHttpRequestModule=/*#__PURE__*/_mergeNamespaces({__proto__:null,'default':XMLHttpRequest_1,__moduleExports:XMLHttpRequest_1},[XMLHttpRequest_1]);const XHR = XMLHttpRequest_1 || XMLHttpRequestModule;function empty() { }
+}var XMLHttpRequestModule=/*#__PURE__*/_mergeNamespaces({__proto__:null,'default':XMLHttpRequest_1,__moduleExports:XMLHttpRequest_1},[XMLHttpRequest_1]);const XHR = XMLHttpRequest_1 || XMLHttpRequestModule;
+function createCookieJar() {
+    return new CookieJar();
+}
+/**
+ * @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie
+ */
+function parse$4(setCookieString) {
+    const parts = setCookieString.split("; ");
+    const i = parts[0].indexOf("=");
+    if (i === -1) {
+        return;
+    }
+    const name = parts[0].substring(0, i).trim();
+    if (!name.length) {
+        return;
+    }
+    let value = parts[0].substring(i + 1).trim();
+    if (value.charCodeAt(0) === 0x22) {
+        // remove double quotes
+        value = value.slice(1, -1);
+    }
+    const cookie = {
+        name,
+        value,
+    };
+    for (let j = 1; j < parts.length; j++) {
+        const subParts = parts[j].split("=");
+        if (subParts.length !== 2) {
+            continue;
+        }
+        const key = subParts[0].trim();
+        const value = subParts[1].trim();
+        switch (key) {
+            case "Expires":
+                cookie.expires = new Date(value);
+                break;
+            case "Max-Age":
+                const expiration = new Date();
+                expiration.setUTCSeconds(expiration.getUTCSeconds() + parseInt(value, 10));
+                cookie.expires = expiration;
+                break;
+            // ignore other keys
+        }
+    }
+    return cookie;
+}
+class CookieJar {
+    constructor() {
+        this.cookies = new Map();
+    }
+    parseCookies(xhr) {
+        const values = xhr.getResponseHeader("set-cookie");
+        if (!values) {
+            return;
+        }
+        values.forEach((value) => {
+            const parsed = parse$4(value);
+            if (parsed) {
+                this.cookies.set(parsed.name, parsed);
+            }
+        });
+    }
+    addCookies(xhr) {
+        const cookies = [];
+        this.cookies.forEach((cookie, name) => {
+            var _a;
+            if (((_a = cookie.expires) === null || _a === void 0 ? void 0 : _a.getTime()) < Date.now()) {
+                this.cookies.delete(name);
+            }
+            else {
+                cookies.push(`${name}=${cookie.value}`);
+            }
+        });
+        if (cookies.length) {
+            xhr.setDisableHeaderCheck(true);
+            xhr.setRequestHeader("cookie", cookies.join("; "));
+        }
+    }
+}function empty() { }
 const hasXHR2 = (function () {
     const xhr = new XHR({
-        xdomain: false
+        xdomain: false,
     });
     return null != xhr.responseType;
 })();
@@ -1559,7 +1803,7 @@ class Polling extends Transport {
      * XHR Polling constructor.
      *
      * @param {Object} opts
-     * @api public
+     * @package
      */
     constructor(opts) {
         super(opts);
@@ -1575,17 +1819,16 @@ class Polling extends Transport {
                 (typeof location !== "undefined" &&
                     opts.hostname !== location.hostname) ||
                     port !== opts.port;
-            this.xs = opts.secure !== isSSL;
         }
         /**
          * XHR supports binary
          */
         const forceBase64 = opts && opts.forceBase64;
         this.supportsBinary = hasXHR2 && !forceBase64;
+        if (this.opts.withCredentials) {
+            this.cookieJar = createCookieJar();
+        }
     }
-    /**
-     * Transport name.
-     */
     get name() {
         return "polling";
     }
@@ -1593,7 +1836,7 @@ class Polling extends Transport {
      * Opens the socket (triggers polling). We write a PING message to determine
      * when the transport is open.
      *
-     * @api private
+     * @protected
      */
     doOpen() {
         this.poll();
@@ -1601,8 +1844,8 @@ class Polling extends Transport {
     /**
      * Pauses polling.
      *
-     * @param {Function} callback upon buffers are flushed and transport is paused
-     * @api private
+     * @param {Function} onPause - callback upon buffers are flushed and transport is paused
+     * @package
      */
     pause(onPause) {
         this.readyState = "pausing";
@@ -1632,7 +1875,7 @@ class Polling extends Transport {
     /**
      * Starts polling cycle.
      *
-     * @api public
+     * @private
      */
     poll() {
         this.polling = true;
@@ -1642,10 +1885,10 @@ class Polling extends Transport {
     /**
      * Overloads onData to detect payloads.
      *
-     * @api private
+     * @protected
      */
     onData(data) {
-        const callback = packet => {
+        const callback = (packet) => {
             // if its the first message we consider the transport open
             if ("opening" === this.readyState && packet.type === "open") {
                 this.onOpen();
@@ -1673,7 +1916,7 @@ class Polling extends Transport {
     /**
      * For polling, send a close packet.
      *
-     * @api private
+     * @protected
      */
     doClose() {
         const close = () => {
@@ -1691,13 +1934,12 @@ class Polling extends Transport {
     /**
      * Writes a packets payload.
      *
-     * @param {Array} data packets
-     * @param {Function} drain callback
-     * @api private
+     * @param {Array} packets - data packets
+     * @protected
      */
     write(packets) {
         this.writable = false;
-        encodePayload(packets, data => {
+        encodePayload(packets, (data) => {
             this.doWrite(data, () => {
                 this.writable = true;
                 this.emitReserved("drain");
@@ -1707,12 +1949,11 @@ class Polling extends Transport {
     /**
      * Generates uri for connection.
      *
-     * @api private
+     * @private
      */
     uri() {
-        let query = this.query || {};
         const schema = this.opts.secure ? "https" : "http";
-        let port = "";
+        const query = this.query || {};
         // cache busting is forced
         if (false !== this.opts.timestampRequests) {
             query[this.opts.timestampParam] = yeast();
@@ -1720,29 +1961,16 @@ class Polling extends Transport {
         if (!this.supportsBinary && !query.sid) {
             query.b64 = 1;
         }
-        // avoid port if default for schema
-        if (this.opts.port &&
-            (("https" === schema && Number(this.opts.port) !== 443) ||
-                ("http" === schema && Number(this.opts.port) !== 80))) {
-            port = ":" + this.opts.port;
-        }
-        const encodedQuery = encode(query);
-        const ipv6 = this.opts.hostname.indexOf(":") !== -1;
-        return (schema +
-            "://" +
-            (ipv6 ? "[" + this.opts.hostname + "]" : this.opts.hostname) +
-            port +
-            this.opts.path +
-            (encodedQuery.length ? "?" + encodedQuery : ""));
+        return this.createUri(schema, query);
     }
     /**
      * Creates a request.
      *
      * @param {String} method
-     * @api private
+     * @private
      */
     request(opts = {}) {
-        Object.assign(opts, { xd: this.xd, xs: this.xs }, this.opts);
+        Object.assign(opts, { xd: this.xd, cookieJar: this.cookieJar }, this.opts);
         return new Request(this.uri(), opts);
     }
     /**
@@ -1750,12 +1978,12 @@ class Polling extends Transport {
      *
      * @param {String} data to send.
      * @param {Function} called upon flush.
-     * @api private
+     * @private
      */
     doWrite(data, fn) {
         const req = this.request({
             method: "POST",
-            data: data
+            data: data,
         });
         req.on("success", fn);
         req.on("error", (xhrStatus, context) => {
@@ -1765,7 +1993,7 @@ class Polling extends Transport {
     /**
      * Starts a poll cycle.
      *
-     * @api private
+     * @private
      */
     doPoll() {
         const req = this.request();
@@ -1781,7 +2009,7 @@ class Request extends Emitter {
      * Request constructor
      *
      * @param {Object} options
-     * @api public
+     * @package
      */
     constructor(uri, opts) {
         super();
@@ -1789,22 +2017,21 @@ class Request extends Emitter {
         this.opts = opts;
         this.method = opts.method || "GET";
         this.uri = uri;
-        this.async = false !== opts.async;
         this.data = undefined !== opts.data ? opts.data : null;
         this.create();
     }
     /**
      * Creates the XHR object and sends the request.
      *
-     * @api private
+     * @private
      */
     create() {
+        var _a;
         const opts = pick(this.opts, "agent", "pfx", "key", "passphrase", "cert", "ca", "ciphers", "rejectUnauthorized", "autoUnref");
         opts.xdomain = !!this.opts.xd;
-        opts.xscheme = !!this.opts.xs;
         const xhr = (this.xhr = new XHR(opts));
         try {
-            xhr.open(this.method, this.uri, this.async);
+            xhr.open(this.method, this.uri, true);
             try {
                 if (this.opts.extraHeaders) {
                     xhr.setDisableHeaderCheck && xhr.setDisableHeaderCheck(true);
@@ -1826,6 +2053,7 @@ class Request extends Emitter {
                 xhr.setRequestHeader("Accept", "*/*");
             }
             catch (e) { }
+            (_a = this.opts.cookieJar) === null || _a === void 0 ? void 0 : _a.addCookies(xhr);
             // ie6 check
             if ("withCredentials" in xhr) {
                 xhr.withCredentials = this.opts.withCredentials;
@@ -1834,6 +2062,10 @@ class Request extends Emitter {
                 xhr.timeout = this.opts.requestTimeout;
             }
             xhr.onreadystatechange = () => {
+                var _a;
+                if (xhr.readyState === 3) {
+                    (_a = this.opts.cookieJar) === null || _a === void 0 ? void 0 : _a.parseCookies(xhr);
+                }
                 if (4 !== xhr.readyState)
                     return;
                 if (200 === xhr.status || 1223 === xhr.status) {
@@ -1866,7 +2098,7 @@ class Request extends Emitter {
     /**
      * Called upon error.
      *
-     * @api private
+     * @private
      */
     onError(err) {
         this.emitReserved("error", err, this.xhr);
@@ -1875,7 +2107,7 @@ class Request extends Emitter {
     /**
      * Cleans up house.
      *
-     * @api private
+     * @private
      */
     cleanup(fromError) {
         if ("undefined" === typeof this.xhr || null === this.xhr) {
@@ -1896,7 +2128,7 @@ class Request extends Emitter {
     /**
      * Called upon load.
      *
-     * @api private
+     * @private
      */
     onLoad() {
         const data = this.xhr.responseText;
@@ -1909,7 +2141,7 @@ class Request extends Emitter {
     /**
      * Aborts the request.
      *
-     * @api public
+     * @package
      */
     abort() {
         this.cleanup();
@@ -2061,30 +2293,31 @@ function toBuffer(data) {
   return buf;
 }
 
-try {
-  const bufferUtil = require('bufferutil');
+module.exports = {
+  concat,
+  mask: _mask,
+  toArrayBuffer,
+  toBuffer,
+  unmask: _unmask
+};
 
-  module.exports = {
-    concat,
-    mask(source, mask, output, offset, length) {
+/* istanbul ignore else  */
+if (!process.env.WS_NO_BUFFER_UTIL) {
+  try {
+    const bufferUtil = require('bufferutil');
+
+    module.exports.mask = function (source, mask, output, offset, length) {
       if (length < 48) _mask(source, mask, output, offset, length);
       else bufferUtil.mask(source, mask, output, offset, length);
-    },
-    toArrayBuffer,
-    toBuffer,
-    unmask(buffer, mask) {
+    };
+
+    module.exports.unmask = function (buffer, mask) {
       if (buffer.length < 32) _unmask(buffer, mask);
       else bufferUtil.unmask(buffer, mask);
-    }
-  };
-} catch (e) /* istanbul ignore next */ {
-  module.exports = {
-    concat,
-    mask: _mask,
-    toArrayBuffer,
-    toBuffer,
-    unmask: _unmask
-  };
+    };
+  } catch (e) {
+    // Continue regardless of the error.
+  }
 }
 });const kDone = Symbol('kDone');
 const kRun = Symbol('kRun');
@@ -2447,7 +2680,7 @@ class PerMessageDeflate {
   /**
    * Compress data. Concurrency limited.
    *
-   * @param {Buffer} data Data to compress
+   * @param {(Buffer|String)} data Data to compress
    * @param {Boolean} fin Specifies whether or not this is the last fragment
    * @param {Function} callback Callback
    * @public
@@ -2529,7 +2762,7 @@ class PerMessageDeflate {
   /**
    * Compress data.
    *
-   * @param {Buffer} data Data to compress
+   * @param {(Buffer|String)} data Data to compress
    * @param {Boolean} fin Specifies whether or not this is the last fragment
    * @param {Function} callback Callback
    * @private
@@ -2749,22 +2982,23 @@ function _isValidUTF8(buf) {
   return true;
 }
 
-try {
-  const isValidUTF8 = require('utf-8-validate');
+module.exports = {
+  isValidStatusCode,
+  isValidUTF8: _isValidUTF8,
+  tokenChars
+};
 
-  module.exports = {
-    isValidStatusCode,
-    isValidUTF8(buf) {
+/* istanbul ignore else  */
+if (!process.env.WS_NO_UTF_8_VALIDATE) {
+  try {
+    const isValidUTF8 = require('utf-8-validate');
+
+    module.exports.isValidUTF8 = function (buf) {
       return buf.length < 150 ? _isValidUTF8(buf) : isValidUTF8(buf);
-    },
-    tokenChars
-  };
-} catch (e) /* istanbul ignore next */ {
-  module.exports = {
-    isValidStatusCode,
-    isValidUTF8: _isValidUTF8,
-    tokenChars
-  };
+    };
+  } catch (e) {
+    // Continue regardless of the error.
+  }
 }
 });const { Writable } = stream__default["default"];
 
@@ -3183,7 +3417,13 @@ class Receiver extends Writable {
       }
 
       data = this.consume(this._payloadLength);
-      if (this._masked) unmask(data, this._mask);
+
+      if (
+        this._masked &&
+        (this._mask[0] | this._mask[1] | this._mask[2] | this._mask[3]) !== 0
+      ) {
+        unmask(data, this._mask);
+      }
     }
 
     if (this._opcode > 0x07) return this.controlMessage(data);
@@ -3382,7 +3622,8 @@ const { EMPTY_BUFFER: EMPTY_BUFFER$1 } = constants;
 const { isValidStatusCode } = validation;
 const { mask: applyMask, toBuffer: toBuffer$1 } = bufferUtil;
 
-const mask = Buffer.alloc(4);
+const kByteLength = Symbol('kByteLength');
+const maskBuffer = Buffer.alloc(4);
 
 /**
  * HyBi Sender implementation.
@@ -3393,9 +3634,17 @@ class Sender {
    *
    * @param {(net.Socket|tls.Socket)} socket The connection socket
    * @param {Object} [extensions] An object containing the negotiated extensions
+   * @param {Function} [generateMask] The function used to generate the masking
+   *     key
    */
-  constructor(socket, extensions) {
+  constructor(socket, extensions, generateMask) {
     this._extensions = extensions || {};
+
+    if (generateMask) {
+      this._generateMask = generateMask;
+      this._maskBuffer = Buffer.alloc(4);
+    }
+
     this._socket = socket;
 
     this._firstFragment = true;
@@ -3409,34 +3658,71 @@ class Sender {
   /**
    * Frames a piece of data according to the HyBi WebSocket protocol.
    *
-   * @param {Buffer} data The data to frame
+   * @param {(Buffer|String)} data The data to frame
    * @param {Object} options Options object
    * @param {Boolean} [options.fin=false] Specifies whether or not to set the
    *     FIN bit
+   * @param {Function} [options.generateMask] The function used to generate the
+   *     masking key
    * @param {Boolean} [options.mask=false] Specifies whether or not to mask
    *     `data`
+   * @param {Buffer} [options.maskBuffer] The buffer used to store the masking
+   *     key
    * @param {Number} options.opcode The opcode
    * @param {Boolean} [options.readOnly=false] Specifies whether `data` can be
    *     modified
    * @param {Boolean} [options.rsv1=false] Specifies whether or not to set the
    *     RSV1 bit
-   * @return {Buffer[]} The framed data as a list of `Buffer` instances
+   * @return {(Buffer|String)[]} The framed data
    * @public
    */
   static frame(data, options) {
-    const merge = options.mask && options.readOnly;
-    let offset = options.mask ? 6 : 2;
-    let payloadLength = data.length;
+    let mask;
+    let merge = false;
+    let offset = 2;
+    let skipMasking = false;
 
-    if (data.length >= 65536) {
+    if (options.mask) {
+      mask = options.maskBuffer || maskBuffer;
+
+      if (options.generateMask) {
+        options.generateMask(mask);
+      } else {
+        randomFillSync(mask, 0, 4);
+      }
+
+      skipMasking = (mask[0] | mask[1] | mask[2] | mask[3]) === 0;
+      offset = 6;
+    }
+
+    let dataLength;
+
+    if (typeof data === 'string') {
+      if (
+        (!options.mask || skipMasking) &&
+        options[kByteLength] !== undefined
+      ) {
+        dataLength = options[kByteLength];
+      } else {
+        data = Buffer.from(data);
+        dataLength = data.length;
+      }
+    } else {
+      dataLength = data.length;
+      merge = options.mask && options.readOnly && !skipMasking;
+    }
+
+    let payloadLength = dataLength;
+
+    if (dataLength >= 65536) {
       offset += 8;
       payloadLength = 127;
-    } else if (data.length > 125) {
+    } else if (dataLength > 125) {
       offset += 2;
       payloadLength = 126;
     }
 
-    const target = Buffer.allocUnsafe(merge ? data.length + offset : offset);
+    const target = Buffer.allocUnsafe(merge ? dataLength + offset : offset);
 
     target[0] = options.fin ? options.opcode | 0x80 : options.opcode;
     if (options.rsv1) target[0] |= 0x40;
@@ -3444,15 +3730,13 @@ class Sender {
     target[1] = payloadLength;
 
     if (payloadLength === 126) {
-      target.writeUInt16BE(data.length, 2);
+      target.writeUInt16BE(dataLength, 2);
     } else if (payloadLength === 127) {
-      target.writeUInt32BE(0, 2);
-      target.writeUInt32BE(data.length, 6);
+      target[2] = target[3] = 0;
+      target.writeUIntBE(dataLength, 4, 6);
     }
 
     if (!options.mask) return [target, data];
-
-    randomFillSync(mask, 0, 4);
 
     target[1] |= 0x80;
     target[offset - 4] = mask[0];
@@ -3460,12 +3744,14 @@ class Sender {
     target[offset - 2] = mask[2];
     target[offset - 1] = mask[3];
 
+    if (skipMasking) return [target, data];
+
     if (merge) {
-      applyMask(data, mask, target, offset, data.length);
+      applyMask(data, mask, target, offset, dataLength);
       return [target];
     }
 
-    applyMask(data, mask, data, 0, data.length);
+    applyMask(data, mask, data, 0, dataLength);
     return [target, data];
   }
 
@@ -3505,32 +3791,22 @@ class Sender {
       }
     }
 
-    if (this._deflating) {
-      this.enqueue([this.doClose, buf, mask, cb]);
-    } else {
-      this.doClose(buf, mask, cb);
-    }
-  }
+    const options = {
+      [kByteLength]: buf.length,
+      fin: true,
+      generateMask: this._generateMask,
+      mask,
+      maskBuffer: this._maskBuffer,
+      opcode: 0x08,
+      readOnly: false,
+      rsv1: false
+    };
 
-  /**
-   * Frames and sends a close message.
-   *
-   * @param {Buffer} data The message to send
-   * @param {Boolean} [mask=false] Specifies whether or not to mask `data`
-   * @param {Function} [cb] Callback
-   * @private
-   */
-  doClose(data, mask, cb) {
-    this.sendFrame(
-      Sender.frame(data, {
-        fin: true,
-        rsv1: false,
-        opcode: 0x08,
-        mask,
-        readOnly: false
-      }),
-      cb
-    );
+    if (this._deflating) {
+      this.enqueue([this.dispatch, buf, false, options, cb]);
+    } else {
+      this.sendFrame(Sender.frame(buf, options), cb);
+    }
   }
 
   /**
@@ -3542,39 +3818,38 @@ class Sender {
    * @public
    */
   ping(data, mask, cb) {
-    const buf = toBuffer$1(data);
+    let byteLength;
+    let readOnly;
 
-    if (buf.length > 125) {
+    if (typeof data === 'string') {
+      byteLength = Buffer.byteLength(data);
+      readOnly = false;
+    } else {
+      data = toBuffer$1(data);
+      byteLength = data.length;
+      readOnly = toBuffer$1.readOnly;
+    }
+
+    if (byteLength > 125) {
       throw new RangeError('The data size must not be greater than 125 bytes');
     }
 
-    if (this._deflating) {
-      this.enqueue([this.doPing, buf, mask, toBuffer$1.readOnly, cb]);
-    } else {
-      this.doPing(buf, mask, toBuffer$1.readOnly, cb);
-    }
-  }
+    const options = {
+      [kByteLength]: byteLength,
+      fin: true,
+      generateMask: this._generateMask,
+      mask,
+      maskBuffer: this._maskBuffer,
+      opcode: 0x09,
+      readOnly,
+      rsv1: false
+    };
 
-  /**
-   * Frames and sends a ping message.
-   *
-   * @param {Buffer} data The message to send
-   * @param {Boolean} [mask=false] Specifies whether or not to mask `data`
-   * @param {Boolean} [readOnly=false] Specifies whether `data` can be modified
-   * @param {Function} [cb] Callback
-   * @private
-   */
-  doPing(data, mask, readOnly, cb) {
-    this.sendFrame(
-      Sender.frame(data, {
-        fin: true,
-        rsv1: false,
-        opcode: 0x09,
-        mask,
-        readOnly
-      }),
-      cb
-    );
+    if (this._deflating) {
+      this.enqueue([this.dispatch, data, false, options, cb]);
+    } else {
+      this.sendFrame(Sender.frame(data, options), cb);
+    }
   }
 
   /**
@@ -3586,39 +3861,38 @@ class Sender {
    * @public
    */
   pong(data, mask, cb) {
-    const buf = toBuffer$1(data);
+    let byteLength;
+    let readOnly;
 
-    if (buf.length > 125) {
+    if (typeof data === 'string') {
+      byteLength = Buffer.byteLength(data);
+      readOnly = false;
+    } else {
+      data = toBuffer$1(data);
+      byteLength = data.length;
+      readOnly = toBuffer$1.readOnly;
+    }
+
+    if (byteLength > 125) {
       throw new RangeError('The data size must not be greater than 125 bytes');
     }
 
-    if (this._deflating) {
-      this.enqueue([this.doPong, buf, mask, toBuffer$1.readOnly, cb]);
-    } else {
-      this.doPong(buf, mask, toBuffer$1.readOnly, cb);
-    }
-  }
+    const options = {
+      [kByteLength]: byteLength,
+      fin: true,
+      generateMask: this._generateMask,
+      mask,
+      maskBuffer: this._maskBuffer,
+      opcode: 0x0a,
+      readOnly,
+      rsv1: false
+    };
 
-  /**
-   * Frames and sends a pong message.
-   *
-   * @param {Buffer} data The message to send
-   * @param {Boolean} [mask=false] Specifies whether or not to mask `data`
-   * @param {Boolean} [readOnly=false] Specifies whether `data` can be modified
-   * @param {Function} [cb] Callback
-   * @private
-   */
-  doPong(data, mask, readOnly, cb) {
-    this.sendFrame(
-      Sender.frame(data, {
-        fin: true,
-        rsv1: false,
-        opcode: 0x0a,
-        mask,
-        readOnly
-      }),
-      cb
-    );
+    if (this._deflating) {
+      this.enqueue([this.dispatch, data, false, options, cb]);
+    } else {
+      this.sendFrame(Sender.frame(data, options), cb);
+    }
   }
 
   /**
@@ -3638,10 +3912,21 @@ class Sender {
    * @public
    */
   send(data, options, cb) {
-    const buf = toBuffer$1(data);
     const perMessageDeflate = this._extensions[permessageDeflate.extensionName];
     let opcode = options.binary ? 2 : 1;
     let rsv1 = options.compress;
+
+    let byteLength;
+    let readOnly;
+
+    if (typeof data === 'string') {
+      byteLength = Buffer.byteLength(data);
+      readOnly = false;
+    } else {
+      data = toBuffer$1(data);
+      byteLength = data.length;
+      readOnly = toBuffer$1.readOnly;
+    }
 
     if (this._firstFragment) {
       this._firstFragment = false;
@@ -3654,7 +3939,7 @@ class Sender {
             : 'client_no_context_takeover'
         ]
       ) {
-        rsv1 = buf.length >= perMessageDeflate._threshold;
+        rsv1 = byteLength >= perMessageDeflate._threshold;
       }
       this._compress = rsv1;
     } else {
@@ -3666,26 +3951,32 @@ class Sender {
 
     if (perMessageDeflate) {
       const opts = {
+        [kByteLength]: byteLength,
         fin: options.fin,
-        rsv1,
-        opcode,
+        generateMask: this._generateMask,
         mask: options.mask,
-        readOnly: toBuffer$1.readOnly
+        maskBuffer: this._maskBuffer,
+        opcode,
+        readOnly,
+        rsv1
       };
 
       if (this._deflating) {
-        this.enqueue([this.dispatch, buf, this._compress, opts, cb]);
+        this.enqueue([this.dispatch, data, this._compress, opts, cb]);
       } else {
-        this.dispatch(buf, this._compress, opts, cb);
+        this.dispatch(data, this._compress, opts, cb);
       }
     } else {
       this.sendFrame(
-        Sender.frame(buf, {
+        Sender.frame(data, {
+          [kByteLength]: byteLength,
           fin: options.fin,
-          rsv1: false,
-          opcode,
+          generateMask: this._generateMask,
           mask: options.mask,
-          readOnly: toBuffer$1.readOnly
+          maskBuffer: this._maskBuffer,
+          opcode,
+          readOnly,
+          rsv1: false
         }),
         cb
       );
@@ -3693,17 +3984,21 @@ class Sender {
   }
 
   /**
-   * Dispatches a data message.
+   * Dispatches a message.
    *
-   * @param {Buffer} data The message to send
+   * @param {(Buffer|String)} data The message to send
    * @param {Boolean} [compress=false] Specifies whether or not to compress
    *     `data`
    * @param {Object} options Options object
-   * @param {Number} options.opcode The opcode
    * @param {Boolean} [options.fin=false] Specifies whether or not to set the
    *     FIN bit
+   * @param {Function} [options.generateMask] The function used to generate the
+   *     masking key
    * @param {Boolean} [options.mask=false] Specifies whether or not to mask
    *     `data`
+   * @param {Buffer} [options.maskBuffer] The buffer used to store the masking
+   *     key
+   * @param {Number} options.opcode The opcode
    * @param {Boolean} [options.readOnly=false] Specifies whether `data` can be
    *     modified
    * @param {Boolean} [options.rsv1=false] Specifies whether or not to set the
@@ -3719,7 +4014,7 @@ class Sender {
 
     const perMessageDeflate = this._extensions[permessageDeflate.extensionName];
 
-    this._bufferedBytes += data.length;
+    this._bufferedBytes += options[kByteLength];
     this._deflating = true;
     perMessageDeflate.compress(data, options.fin, (_, buf) => {
       if (this._socket.destroyed) {
@@ -3730,7 +4025,8 @@ class Sender {
         if (typeof cb === 'function') cb(err);
 
         for (let i = 0; i < this._queue.length; i++) {
-          const callback = this._queue[i][4];
+          const params = this._queue[i];
+          const callback = params[params.length - 1];
 
           if (typeof callback === 'function') callback(err);
         }
@@ -3738,7 +4034,7 @@ class Sender {
         return;
       }
 
-      this._bufferedBytes -= data.length;
+      this._bufferedBytes -= options[kByteLength];
       this._deflating = false;
       options.readOnly = false;
       this.sendFrame(Sender.frame(buf, options), cb);
@@ -3755,7 +4051,7 @@ class Sender {
     while (!this._deflating && this._queue.length) {
       const params = this._queue.shift();
 
-      this._bufferedBytes -= params[1].length;
+      this._bufferedBytes -= params[3][kByteLength];
       Reflect.apply(params[0], this, params.slice(1));
     }
   }
@@ -3767,7 +4063,7 @@ class Sender {
    * @private
    */
   enqueue(params) {
-    this._bufferedBytes += params[1].length;
+    this._bufferedBytes += params[3][kByteLength];
     this._queue.push(params);
   }
 
@@ -3968,7 +4264,7 @@ const EventTarget = {
    * Register an event listener.
    *
    * @param {String} type A string representing the event type to listen for
-   * @param {Function} listener The listener to add
+   * @param {(Function|Object)} handler The listener to add
    * @param {Object} [options] An options object specifies characteristics about
    *     the event listener
    * @param {Boolean} [options.once=false] A `Boolean` indicating that the
@@ -3976,7 +4272,17 @@ const EventTarget = {
    *     the listener would be automatically removed when invoked.
    * @public
    */
-  addEventListener(type, listener, options = {}) {
+  addEventListener(type, handler, options = {}) {
+    for (const listener of this.listeners(type)) {
+      if (
+        !options[kForOnEventAttribute$1] &&
+        listener[kListener$1] === handler &&
+        !listener[kForOnEventAttribute$1]
+      ) {
+        return;
+      }
+    }
+
     let wrapper;
 
     if (type === 'message') {
@@ -3986,7 +4292,7 @@ const EventTarget = {
         });
 
         event[kTarget] = this;
-        listener.call(this, event);
+        callListener(handler, this, event);
       };
     } else if (type === 'close') {
       wrapper = function onClose(code, message) {
@@ -3997,7 +4303,7 @@ const EventTarget = {
         });
 
         event[kTarget] = this;
-        listener.call(this, event);
+        callListener(handler, this, event);
       };
     } else if (type === 'error') {
       wrapper = function onError(error) {
@@ -4007,21 +4313,21 @@ const EventTarget = {
         });
 
         event[kTarget] = this;
-        listener.call(this, event);
+        callListener(handler, this, event);
       };
     } else if (type === 'open') {
       wrapper = function onOpen() {
         const event = new Event('open');
 
         event[kTarget] = this;
-        listener.call(this, event);
+        callListener(handler, this, event);
       };
     } else {
       return;
     }
 
     wrapper[kForOnEventAttribute$1] = !!options[kForOnEventAttribute$1];
-    wrapper[kListener$1] = listener;
+    wrapper[kListener$1] = handler;
 
     if (options.once) {
       this.once(type, wrapper);
@@ -4034,7 +4340,7 @@ const EventTarget = {
    * Remove an event listener.
    *
    * @param {String} type A string representing the event type to remove
-   * @param {Function} handler The listener to remove
+   * @param {(Function|Object)} handler The listener to remove
    * @public
    */
   removeEventListener(type, handler) {
@@ -4053,7 +4359,23 @@ var eventTarget = {
   Event,
   EventTarget,
   MessageEvent
-};const { tokenChars: tokenChars$1 } = validation;
+};
+
+/**
+ * Call an event listener
+ *
+ * @param {(Function|Object)} listener The listener to call
+ * @param {*} thisArg The value to use as `this`` when calling the listener
+ * @param {Event} event The event to pass to the listener
+ * @private
+ */
+function callListener(listener, thisArg, event) {
+  if (typeof listener === 'object' && listener.handleEvent) {
+    listener.handleEvent.call(listener, event);
+  } else {
+    listener.call(thisArg, event);
+  }
+}const { tokenChars: tokenChars$1 } = validation;
 
 /**
  * Adds an offer to the map of extension offers or a parameter to the map of
@@ -4275,10 +4597,11 @@ const {
 const { format, parse: parse$2 } = extension;
 const { toBuffer } = bufferUtil;
 
+const closeTimeout = 30 * 1000;
+const kAborted = Symbol('kAborted');
+const protocolVersions = [8, 13];
 const readyStates = ['CONNECTING', 'OPEN', 'CLOSING', 'CLOSED'];
 const subprotocolRegex = /^[!#$%&'*+\-.0-9A-Z^_`|a-z~]+$/;
-const protocolVersions = [8, 13];
-const closeTimeout = 30 * 1000;
 
 /**
  * Class representing a WebSocket.
@@ -4303,6 +4626,7 @@ class WebSocket$1 extends events__default["default"] {
     this._closeMessage = EMPTY_BUFFER;
     this._closeTimer = null;
     this._extensions = {};
+    this._paused = false;
     this._protocol = '';
     this._readyState = WebSocket$1.CONNECTING;
     this._receiver = null;
@@ -4370,6 +4694,13 @@ class WebSocket$1 extends events__default["default"] {
   }
 
   /**
+   * @type {Boolean}
+   */
+  get isPaused() {
+    return this._paused;
+  }
+
+  /**
    * @type {Function}
    */
   /* istanbul ignore next */
@@ -4429,6 +4760,8 @@ class WebSocket$1 extends events__default["default"] {
    *     server and client
    * @param {Buffer} head The first packet of the upgraded stream
    * @param {Object} options Options object
+   * @param {Function} [options.generateMask] The function used to generate the
+   *     masking key
    * @param {Number} [options.maxPayload=0] The maximum allowed message size
    * @param {Boolean} [options.skipUTF8Validation=false] Specifies whether or
    *     not to skip UTF-8 validation for text and close messages
@@ -4443,7 +4776,7 @@ class WebSocket$1 extends events__default["default"] {
       skipUTF8Validation: options.skipUTF8Validation
     });
 
-    this._sender = new sender(socket, this._extensions);
+    this._sender = new sender(socket, this._extensions, options.generateMask);
     this._receiver = receiver$1;
     this._socket = socket;
 
@@ -4558,6 +4891,23 @@ class WebSocket$1 extends events__default["default"] {
   }
 
   /**
+   * Pause the socket.
+   *
+   * @public
+   */
+  pause() {
+    if (
+      this.readyState === WebSocket$1.CONNECTING ||
+      this.readyState === WebSocket$1.CLOSED
+    ) {
+      return;
+    }
+
+    this._paused = true;
+    this._socket.pause();
+  }
+
+  /**
    * Send a ping.
    *
    * @param {*} [data] The data to send
@@ -4619,6 +4969,23 @@ class WebSocket$1 extends events__default["default"] {
 
     if (mask === undefined) mask = !this._isServer;
     this._sender.pong(data || EMPTY_BUFFER, mask, cb);
+  }
+
+  /**
+   * Resume the socket.
+   *
+   * @public
+   */
+  resume() {
+    if (
+      this.readyState === WebSocket$1.CONNECTING ||
+      this.readyState === WebSocket$1.CLOSED
+    ) {
+      return;
+    }
+
+    this._paused = false;
+    if (!this._receiver._writableState.needDrain) this._socket.resume();
   }
 
   /**
@@ -4763,6 +5130,7 @@ Object.defineProperty(WebSocket$1.prototype, 'CLOSED', {
   'binaryType',
   'bufferedAmount',
   'extensions',
+  'isPaused',
   'protocol',
   'readyState',
   'url'
@@ -4815,6 +5183,8 @@ var websocket = WebSocket$1;
  * @param {Object} [options] Connection options
  * @param {Boolean} [options.followRedirects=false] Whether or not to follow
  *     redirects
+ * @param {Function} [options.generateMask] The function used to generate the
+ *     masking key
  * @param {Number} [options.handshakeTimeout] Timeout in milliseconds for the
  *     handshake request
  * @param {Number} [options.maxPayload=104857600] The maximum allowed message
@@ -4845,7 +5215,7 @@ function initAsClient(websocket, address, protocols, options) {
     hostname: undefined,
     protocol: undefined,
     timeout: undefined,
-    method: undefined,
+    method: 'GET',
     host: undefined,
     path: undefined,
     port: undefined
@@ -4874,25 +5244,32 @@ function initAsClient(websocket, address, protocols, options) {
   }
 
   const isSecure = parsedUrl.protocol === 'wss:';
-  const isUnixSocket = parsedUrl.protocol === 'ws+unix:';
+  const isIpcUrl = parsedUrl.protocol === 'ws+unix:';
+  let invalidUrlMessage;
 
-  if (parsedUrl.protocol !== 'ws:' && !isSecure && !isUnixSocket) {
-    throw new SyntaxError(
-      'The URL\'s protocol must be one of "ws:", "wss:", or "ws+unix:"'
-    );
+  if (parsedUrl.protocol !== 'ws:' && !isSecure && !isIpcUrl) {
+    invalidUrlMessage =
+      'The URL\'s protocol must be one of "ws:", "wss:", or "ws+unix:"';
+  } else if (isIpcUrl && !parsedUrl.pathname) {
+    invalidUrlMessage = "The URL's pathname is empty";
+  } else if (parsedUrl.hash) {
+    invalidUrlMessage = 'The URL contains a fragment identifier';
   }
 
-  if (isUnixSocket && !parsedUrl.pathname) {
-    throw new SyntaxError("The URL's pathname is empty");
-  }
+  if (invalidUrlMessage) {
+    const err = new SyntaxError(invalidUrlMessage);
 
-  if (parsedUrl.hash) {
-    throw new SyntaxError('The URL contains a fragment identifier');
+    if (websocket._redirects === 0) {
+      throw err;
+    } else {
+      emitErrorAndClose(websocket, err);
+      return;
+    }
   }
 
   const defaultPort = isSecure ? 443 : 80;
   const key = randomBytes(16).toString('base64');
-  const get = isSecure ? https__default["default"].get : http__default["default"].get;
+  const request = isSecure ? https__default["default"].request : http__default["default"].request;
   const protocolSet = new Set();
   let perMessageDeflate;
 
@@ -4903,11 +5280,11 @@ function initAsClient(websocket, address, protocols, options) {
     ? parsedUrl.hostname.slice(1, -1)
     : parsedUrl.hostname;
   opts.headers = {
+    ...opts.headers,
     'Sec-WebSocket-Version': opts.protocolVersion,
     'Sec-WebSocket-Key': key,
     Connection: 'Upgrade',
-    Upgrade: 'websocket',
-    ...opts.headers
+    Upgrade: 'websocket'
   };
   opts.path = parsedUrl.pathname + parsedUrl.search;
   opts.timeout = opts.handshakeTimeout;
@@ -4950,14 +5327,86 @@ function initAsClient(websocket, address, protocols, options) {
     opts.auth = `${parsedUrl.username}:${parsedUrl.password}`;
   }
 
-  if (isUnixSocket) {
+  if (isIpcUrl) {
     const parts = opts.path.split(':');
 
     opts.socketPath = parts[0];
     opts.path = parts[1];
   }
 
-  let req = (websocket._req = get(opts));
+  let req;
+
+  if (opts.followRedirects) {
+    if (websocket._redirects === 0) {
+      websocket._originalIpc = isIpcUrl;
+      websocket._originalSecure = isSecure;
+      websocket._originalHostOrSocketPath = isIpcUrl
+        ? opts.socketPath
+        : parsedUrl.host;
+
+      const headers = options && options.headers;
+
+      //
+      // Shallow copy the user provided options so that headers can be changed
+      // without mutating the original object.
+      //
+      options = { ...options, headers: {} };
+
+      if (headers) {
+        for (const [key, value] of Object.entries(headers)) {
+          options.headers[key.toLowerCase()] = value;
+        }
+      }
+    } else if (websocket.listenerCount('redirect') === 0) {
+      const isSameHost = isIpcUrl
+        ? websocket._originalIpc
+          ? opts.socketPath === websocket._originalHostOrSocketPath
+          : false
+        : websocket._originalIpc
+        ? false
+        : parsedUrl.host === websocket._originalHostOrSocketPath;
+
+      if (!isSameHost || (websocket._originalSecure && !isSecure)) {
+        //
+        // Match curl 7.77.0 behavior and drop the following headers. These
+        // headers are also dropped when following a redirect to a subdomain.
+        //
+        delete opts.headers.authorization;
+        delete opts.headers.cookie;
+
+        if (!isSameHost) delete opts.headers.host;
+
+        opts.auth = undefined;
+      }
+    }
+
+    //
+    // Match curl 7.77.0 behavior and make the first `Authorization` header win.
+    // If the `Authorization` header is set, then there is nothing to do as it
+    // will take precedence.
+    //
+    if (opts.auth && !options.headers.authorization) {
+      options.headers.authorization =
+        'Basic ' + Buffer.from(opts.auth).toString('base64');
+    }
+
+    req = websocket._req = request(opts);
+
+    if (websocket._redirects) {
+      //
+      // Unlike what is done for the `'upgrade'` event, no early exit is
+      // triggered here if the user calls `websocket.close()` or
+      // `websocket.terminate()` from a listener of the `'redirect'` event. This
+      // is because the user can also call `request.destroy()` with an error
+      // before calling `websocket.close()` or `websocket.terminate()` and this
+      // would result in an error being emitted on the `request` object with no
+      // `'error'` event listeners attached.
+      //
+      websocket.emit('redirect', websocket.url, req);
+    }
+  } else {
+    req = websocket._req = request(opts);
+  }
 
   if (opts.timeout) {
     req.on('timeout', () => {
@@ -4966,12 +5415,10 @@ function initAsClient(websocket, address, protocols, options) {
   }
 
   req.on('error', (err) => {
-    if (req === null || req.aborted) return;
+    if (req === null || req[kAborted]) return;
 
     req = websocket._req = null;
-    websocket._readyState = WebSocket$1.CLOSING;
-    websocket.emit('error', err);
-    websocket.emitClose();
+    emitErrorAndClose(websocket, err);
   });
 
   req.on('response', (res) => {
@@ -4991,7 +5438,15 @@ function initAsClient(websocket, address, protocols, options) {
 
       req.abort();
 
-      const addr = new URL(location, address);
+      let addr;
+
+      try {
+        addr = new URL(location, address);
+      } catch (e) {
+        const err = new SyntaxError(`Invalid URL: ${location}`);
+        emitErrorAndClose(websocket, err);
+        return;
+      }
 
       initAsClient(websocket, addr, protocols, options);
     } else if (!websocket.emit('unexpected-response', req, res)) {
@@ -5007,12 +5462,17 @@ function initAsClient(websocket, address, protocols, options) {
     websocket.emit('upgrade', res);
 
     //
-    // The user may have closed the connection from a listener of the `upgrade`
-    // event.
+    // The user may have closed the connection from a listener of the
+    // `'upgrade'` event.
     //
     if (websocket.readyState !== WebSocket$1.CONNECTING) return;
 
     req = websocket._req = null;
+
+    if (res.headers.upgrade.toLowerCase() !== 'websocket') {
+      abortHandshake$1(websocket, socket, 'Invalid Upgrade header');
+      return;
+    }
 
     const digest = createHash$1('sha1')
       .update(key + GUID$1)
@@ -5088,10 +5548,26 @@ function initAsClient(websocket, address, protocols, options) {
     }
 
     websocket.setSocket(socket, head, {
+      generateMask: opts.generateMask,
       maxPayload: opts.maxPayload,
       skipUTF8Validation: opts.skipUTF8Validation
     });
   });
+
+  req.end();
+}
+
+/**
+ * Emit the `'error'` and `'close'` events.
+ *
+ * @param {WebSocket} websocket The WebSocket instance
+ * @param {Error} The error to emit
+ * @private
+ */
+function emitErrorAndClose(websocket, err) {
+  websocket._readyState = WebSocket$1.CLOSING;
+  websocket.emit('error', err);
+  websocket.emitClose();
 }
 
 /**
@@ -5139,6 +5615,7 @@ function abortHandshake$1(websocket, stream, message) {
   Error.captureStackTrace(err, abortHandshake$1);
 
   if (stream.setHeader) {
+    stream[kAborted] = true;
     stream.abort();
 
     if (stream.socket && !stream.socket.destroyed) {
@@ -5150,8 +5627,7 @@ function abortHandshake$1(websocket, stream, message) {
       stream.socket.destroy();
     }
 
-    stream.once('abort', websocket.emitClose.bind(websocket));
-    websocket.emit('error', err);
+    process.nextTick(emitErrorAndClose, websocket, err);
   } else {
     stream.destroy(err);
     stream.once('error', websocket.emit.bind(websocket, 'error'));
@@ -5220,7 +5696,9 @@ function receiverOnConclude(code, reason) {
  * @private
  */
 function receiverOnDrain() {
-  this[kWebSocket$1]._socket.resume();
+  const websocket = this[kWebSocket$1];
+
+  if (!websocket.isPaused) websocket._socket.resume();
 }
 
 /**
@@ -5438,22 +5916,7 @@ function duplexOnError(err) {
  * @public
  */
 function createWebSocketStream(ws, options) {
-  let resumeOnReceiverDrain = true;
   let terminateOnDestroy = true;
-
-  function receiverOnDrain() {
-    if (resumeOnReceiverDrain) ws._socket.resume();
-  }
-
-  if (ws.readyState === ws.CONNECTING) {
-    ws.once('open', function open() {
-      ws._receiver.removeAllListeners('drain');
-      ws._receiver.on('drain', receiverOnDrain);
-    });
-  } else {
-    ws._receiver.removeAllListeners('drain');
-    ws._receiver.on('drain', receiverOnDrain);
-  }
 
   const duplex = new Duplex({
     ...options,
@@ -5467,10 +5930,7 @@ function createWebSocketStream(ws, options) {
     const data =
       !isBinary && duplex._readableState.objectMode ? msg.toString() : msg;
 
-    if (!duplex.push(data)) {
-      resumeOnReceiverDrain = false;
-      ws._socket.pause();
-    }
+    if (!duplex.push(data)) ws.pause();
   });
 
   ws.once('error', function error(err) {
@@ -5546,10 +6006,7 @@ function createWebSocketStream(ws, options) {
   };
 
   duplex._read = function () {
-    if (ws.readyState === ws.OPEN && !resumeOnReceiverDrain) {
-      resumeOnReceiverDrain = true;
-      if (!ws._receiver._writableState.needDrain) ws._socket.resume();
-    }
+    if (ws.isPaused) ws.resume();
   };
 
   duplex._write = function (chunk, encoding, callback) {
@@ -5669,6 +6126,8 @@ class WebSocketServer extends events__default["default"] {
    * @param {Boolean} [options.skipUTF8Validation=false] Specifies whether or
    *     not to skip UTF-8 validation for text and close messages
    * @param {Function} [options.verifyClient] A hook to reject connections
+   * @param {Function} [options.WebSocket=WebSocket] Specifies the `WebSocket`
+   *     class to use. It must be the `WebSocket` class or class that extends it
    * @param {Function} [callback] A listener for the `listening` event
    */
   constructor(options, callback) {
@@ -5687,6 +6146,7 @@ class WebSocketServer extends events__default["default"] {
       host: null,
       path: null,
       port: null,
+      WebSocket: websocket,
       ...options
     };
 
@@ -5847,21 +6307,36 @@ class WebSocketServer extends events__default["default"] {
   handleUpgrade(req, socket, head, cb) {
     socket.on('error', socketOnError);
 
-    const key =
-      req.headers['sec-websocket-key'] !== undefined
-        ? req.headers['sec-websocket-key']
-        : false;
+    const key = req.headers['sec-websocket-key'];
     const version = +req.headers['sec-websocket-version'];
 
-    if (
-      req.method !== 'GET' ||
-      req.headers.upgrade.toLowerCase() !== 'websocket' ||
-      !key ||
-      !keyRegex.test(key) ||
-      (version !== 8 && version !== 13) ||
-      !this.shouldHandle(req)
-    ) {
-      return abortHandshake(socket, 400);
+    if (req.method !== 'GET') {
+      const message = 'Invalid HTTP method';
+      abortHandshakeOrEmitwsClientError(this, req, socket, 405, message);
+      return;
+    }
+
+    if (req.headers.upgrade.toLowerCase() !== 'websocket') {
+      const message = 'Invalid Upgrade header';
+      abortHandshakeOrEmitwsClientError(this, req, socket, 400, message);
+      return;
+    }
+
+    if (!key || !keyRegex.test(key)) {
+      const message = 'Missing or invalid Sec-WebSocket-Key header';
+      abortHandshakeOrEmitwsClientError(this, req, socket, 400, message);
+      return;
+    }
+
+    if (version !== 8 && version !== 13) {
+      const message = 'Missing or invalid Sec-WebSocket-Version header';
+      abortHandshakeOrEmitwsClientError(this, req, socket, 400, message);
+      return;
+    }
+
+    if (!this.shouldHandle(req)) {
+      abortHandshake(socket, 400);
+      return;
     }
 
     const secWebSocketProtocol = req.headers['sec-websocket-protocol'];
@@ -5871,7 +6346,9 @@ class WebSocketServer extends events__default["default"] {
       try {
         protocols = subprotocol.parse(secWebSocketProtocol);
       } catch (err) {
-        return abortHandshake(socket, 400);
+        const message = 'Invalid Sec-WebSocket-Protocol header';
+        abortHandshakeOrEmitwsClientError(this, req, socket, 400, message);
+        return;
       }
     }
 
@@ -5896,7 +6373,10 @@ class WebSocketServer extends events__default["default"] {
           extensions[permessageDeflate.extensionName] = perMessageDeflate;
         }
       } catch (err) {
-        return abortHandshake(socket, 400);
+        const message =
+          'Invalid or unacceptable Sec-WebSocket-Extensions header';
+        abortHandshakeOrEmitwsClientError(this, req, socket, 400, message);
+        return;
       }
     }
 
@@ -5976,7 +6456,7 @@ class WebSocketServer extends events__default["default"] {
       `Sec-WebSocket-Accept: ${digest}`
     ];
 
-    const ws = new websocket(null);
+    const ws = new this.options.WebSocket(null);
 
     if (protocols.size) {
       //
@@ -6063,7 +6543,7 @@ function emitClose(server) {
 }
 
 /**
- * Handle premature socket errors.
+ * Handle socket errors.
  *
  * @private
  */
@@ -6081,27 +6561,54 @@ function socketOnError() {
  * @private
  */
 function abortHandshake(socket, code, message, headers) {
-  if (socket.writable) {
-    message = message || http__default["default"].STATUS_CODES[code];
-    headers = {
-      Connection: 'close',
-      'Content-Type': 'text/html',
-      'Content-Length': Buffer.byteLength(message),
-      ...headers
-    };
+  //
+  // The socket is writable unless the user destroyed or ended it before calling
+  // `server.handleUpgrade()` or in the `verifyClient` function, which is a user
+  // error. Handling this does not make much sense as the worst that can happen
+  // is that some of the data written by the user might be discarded due to the
+  // call to `socket.end()` below, which triggers an `'error'` event that in
+  // turn causes the socket to be destroyed.
+  //
+  message = message || http__default["default"].STATUS_CODES[code];
+  headers = {
+    Connection: 'close',
+    'Content-Type': 'text/html',
+    'Content-Length': Buffer.byteLength(message),
+    ...headers
+  };
 
-    socket.write(
-      `HTTP/1.1 ${code} ${http__default["default"].STATUS_CODES[code]}\r\n` +
-        Object.keys(headers)
-          .map((h) => `${h}: ${headers[h]}`)
-          .join('\r\n') +
-        '\r\n\r\n' +
-        message
-    );
+  socket.once('finish', socket.destroy);
+
+  socket.end(
+    `HTTP/1.1 ${code} ${http__default["default"].STATUS_CODES[code]}\r\n` +
+      Object.keys(headers)
+        .map((h) => `${h}: ${headers[h]}`)
+        .join('\r\n') +
+      '\r\n\r\n' +
+      message
+  );
+}
+
+/**
+ * Emit a `'wsClientError'` event on a `WebSocketServer` if there is at least
+ * one listener for it, otherwise call `abortHandshake()`.
+ *
+ * @param {WebSocketServer} server The WebSocket server
+ * @param {http.IncomingMessage} req The request object
+ * @param {(net.Socket|tls.Socket)} socket The socket of the upgrade request
+ * @param {Number} code The HTTP response status code
+ * @param {String} message The HTTP response body
+ * @private
+ */
+function abortHandshakeOrEmitwsClientError(server, req, socket, code, message) {
+  if (server.listenerCount('wsClientError')) {
+    const err = new Error(message);
+    Error.captureStackTrace(err, abortHandshakeOrEmitwsClientError);
+
+    server.emit('wsClientError', err, socket, req);
+  } else {
+    abortHandshake(socket, code, message);
   }
-
-  socket.removeListener('error', socketOnError);
-  socket.destroy();
 }websocket.createWebSocketStream = stream;
 websocket.Server = websocketServer;
 websocket.Receiver = receiver;
@@ -6121,26 +6628,16 @@ class WS extends Transport {
     /**
      * WebSocket transport constructor.
      *
-     * @api {Object} connection options
-     * @api public
+     * @param {Object} opts - connection options
+     * @protected
      */
     constructor(opts) {
         super(opts);
         this.supportsBinary = !opts.forceBase64;
     }
-    /**
-     * Transport name.
-     *
-     * @api public
-     */
     get name() {
         return "websocket";
     }
-    /**
-     * Opens socket.
-     *
-     * @api private
-     */
     doOpen() {
         if (!this.check()) {
             // let probe timeout
@@ -6166,13 +6663,13 @@ class WS extends Transport {
         catch (err) {
             return this.emitReserved("error", err);
         }
-        this.ws.binaryType = this.socket.binaryType || defaultBinaryType;
+        this.ws.binaryType = this.socket.binaryType;
         this.addEventListeners();
     }
     /**
      * Adds event listeners to the socket
      *
-     * @api private
+     * @private
      */
     addEventListeners() {
         this.ws.onopen = () => {
@@ -6181,19 +6678,13 @@ class WS extends Transport {
             }
             this.onOpen();
         };
-        this.ws.onclose = closeEvent => this.onClose({
+        this.ws.onclose = (closeEvent) => this.onClose({
             description: "websocket connection closed",
-            context: closeEvent
+            context: closeEvent,
         });
-        this.ws.onmessage = ev => this.onData(ev.data);
-        this.ws.onerror = e => this.onError("websocket error", e);
+        this.ws.onmessage = (ev) => this.onData(ev.data);
+        this.ws.onerror = (e) => this.onError("websocket error", e);
     }
-    /**
-     * Writes data to socket.
-     *
-     * @param {Array} array of packets.
-     * @api private
-     */
     write(packets) {
         this.writable = false;
         // encodePacket efficient as it uses WS framing
@@ -6201,7 +6692,7 @@ class WS extends Transport {
         for (let i = 0; i < packets.length; i++) {
             const packet = packets[i];
             const lastPacket = i === packets.length - 1;
-            encodePacket(packet, this.supportsBinary, data => {
+            encodePacket(packet, this.supportsBinary, (data) => {
                 // always create a new object (GH-437)
                 const opts = {};
                 {
@@ -6239,11 +6730,6 @@ class WS extends Transport {
             });
         }
     }
-    /**
-     * Closes socket.
-     *
-     * @api private
-     */
     doClose() {
         if (typeof this.ws !== "undefined") {
             this.ws.close();
@@ -6253,18 +6739,11 @@ class WS extends Transport {
     /**
      * Generates uri for connection.
      *
-     * @api private
+     * @private
      */
     uri() {
-        let query = this.query || {};
         const schema = this.opts.secure ? "wss" : "ws";
-        let port = "";
-        // avoid port if default for schema
-        if (this.opts.port &&
-            (("wss" === schema && Number(this.opts.port) !== 443) ||
-                ("ws" === schema && Number(this.opts.port) !== 80))) {
-            port = ":" + this.opts.port;
-        }
+        const query = this.query || {};
         // append timestamp to URI
         if (this.opts.timestampRequests) {
             query[this.opts.timestampParam] = yeast();
@@ -6273,35 +6752,108 @@ class WS extends Transport {
         if (!this.supportsBinary) {
             query.b64 = 1;
         }
-        const encodedQuery = encode(query);
-        const ipv6 = this.opts.hostname.indexOf(":") !== -1;
-        return (schema +
-            "://" +
-            (ipv6 ? "[" + this.opts.hostname + "]" : this.opts.hostname) +
-            port +
-            this.opts.path +
-            (encodedQuery.length ? "?" + encodedQuery : ""));
+        return this.createUri(schema, query);
     }
     /**
      * Feature detection for WebSocket.
      *
      * @return {Boolean} whether this transport is available.
-     * @api public
+     * @private
      */
     check() {
         return !!WebSocket;
     }
+}class WT extends Transport {
+    get name() {
+        return "webtransport";
+    }
+    doOpen() {
+        // @ts-ignore
+        if (typeof WebTransport !== "function") {
+            return;
+        }
+        // @ts-ignore
+        this.transport = new WebTransport(this.createUri("https"), this.opts.transportOptions[this.name]);
+        this.transport.closed
+            .then(() => {
+            this.onClose();
+        })
+            .catch((err) => {
+            this.onError("webtransport error", err);
+        });
+        // note: we could have used async/await, but that would require some additional polyfills
+        this.transport.ready.then(() => {
+            this.transport.createBidirectionalStream().then((stream) => {
+                const decoderStream = createPacketDecoderStream(Number.MAX_SAFE_INTEGER, this.socket.binaryType);
+                const reader = stream.readable.pipeThrough(decoderStream).getReader();
+                const encoderStream = createPacketEncoderStream();
+                encoderStream.readable.pipeTo(stream.writable);
+                this.writer = encoderStream.writable.getWriter();
+                const read = () => {
+                    reader
+                        .read()
+                        .then(({ done, value }) => {
+                        if (done) {
+                            return;
+                        }
+                        this.onPacket(value);
+                        read();
+                    })
+                        .catch((err) => {
+                    });
+                };
+                read();
+                const packet = { type: "open" };
+                if (this.query.sid) {
+                    packet.data = `{"sid":"${this.query.sid}"}`;
+                }
+                this.writer.write(packet).then(() => this.onOpen());
+            });
+        });
+    }
+    write(packets) {
+        this.writable = false;
+        for (let i = 0; i < packets.length; i++) {
+            const packet = packets[i];
+            const lastPacket = i === packets.length - 1;
+            this.writer.write(packet).then(() => {
+                if (lastPacket) {
+                    nextTick(() => {
+                        this.writable = true;
+                        this.emitReserved("drain");
+                    }, this.setTimeoutFn);
+                }
+            });
+        }
+    }
+    doClose() {
+        var _a;
+        (_a = this.transport) === null || _a === void 0 ? void 0 : _a.close();
+    }
 }const transports = {
     websocket: WS,
-    polling: Polling
+    webtransport: WT,
+    polling: Polling,
 };// imported from https://github.com/galkn/parseuri
 /**
- * Parses an URI
+ * Parses a URI
+ *
+ * Note: we could also have used the built-in URL object, but it isn't supported on all platforms.
+ *
+ * See:
+ * - https://developer.mozilla.org/en-US/docs/Web/API/URL
+ * - https://caniuse.com/url
+ * - https://www.rfc-editor.org/rfc/rfc3986#appendix-B
+ *
+ * History of the parse() method:
+ * - first commit: https://github.com/socketio/socket.io-client/commit/4ee1d5d94b3906a9c052b459f1a818b15f38f91c
+ * - export into its own module: https://github.com/socketio/engine.io-client/commit/de2c561e4564efeb78f1bdb1ba39ef81b2822cb3
+ * - reimport: https://github.com/socketio/engine.io-client/commit/df32277c3f6d622eec5ed09f493cae3f3391d242
  *
  * @author Steven Levithan <stevenlevithan.com> (MIT license)
  * @api private
  */
-const re = /^(?:(?![^:@]+:[^:@\/]*@)(http|https|ws|wss):\/\/)?((?:(([^:@]*)(?::([^:@]*))?)?@)?((?:[a-f0-9]{0,4}:){2,7}[a-f0-9]{0,4}|[^:\/?#]*)(?::(\d*))?)(((\/(?:[^?#](?![^?#\/]*\.[^?#\/.]+(?:[?#]|$)))*\/?)?([^?#\/]*))(?:\?([^#]*))?(?:#(.*))?)/;
+const re = /^(?:(?![^:@\/?#]+:[^:@\/]*@)(http|https|ws|wss):\/\/)?((?:(([^:@\/?#]*)(?::([^:@\/?#]*))?)?@)?((?:[a-f0-9]{0,4}:){2,7}[a-f0-9]{0,4}|[^:\/?#]*)(?::(\d*))?)(((\/(?:[^?#](?![^?#\/]*\.[^?#\/.]+(?:[?#]|$)))*\/?)?([^?#\/]*))(?:\?([^#]*))?(?:#(.*))?)/;
 const parts = [
     'source', 'protocol', 'authority', 'userInfo', 'user', 'password', 'host', 'port', 'relative', 'path', 'directory', 'file', 'query', 'anchor'
 ];
@@ -6346,12 +6898,13 @@ function queryKey(uri, query) {
     /**
      * Socket constructor.
      *
-     * @param {String|Object} uri or options
+     * @param {String|Object} uri - uri or options
      * @param {Object} opts - options
-     * @api public
      */
     constructor(uri, opts = {}) {
         super();
+        this.binaryType = defaultBinaryType;
+        this.writeBuffer = [];
         if (uri && "object" === typeof uri) {
             opts = uri;
             uri = null;
@@ -6386,8 +6939,11 @@ function queryKey(uri, query) {
                     : this.secure
                         ? "443"
                         : "80");
-        this.transports = opts.transports || ["polling", "websocket"];
-        this.readyState = "";
+        this.transports = opts.transports || [
+            "polling",
+            "websocket",
+            "webtransport",
+        ];
         this.writeBuffer = [];
         this.prevBufferLen = 0;
         this.opts = Object.assign({
@@ -6397,14 +6953,17 @@ function queryKey(uri, query) {
             upgrade: true,
             timestampParam: "t",
             rememberUpgrade: false,
+            addTrailingSlash: true,
             rejectUnauthorized: true,
             perMessageDeflate: {
-                threshold: 1024
+                threshold: 1024,
             },
             transportOptions: {},
-            closeOnBeforeunload: true
+            closeOnBeforeunload: false,
         }, opts);
-        this.opts.path = this.opts.path.replace(/\/$/, "") + "/";
+        this.opts.path =
+            this.opts.path.replace(/\/$/, "") +
+                (this.opts.addTrailingSlash ? "/" : "");
         if (typeof this.opts.query === "string") {
             this.opts.query = decode(this.opts.query);
         }
@@ -6432,7 +6991,7 @@ function queryKey(uri, query) {
             if (this.hostname !== "localhost") {
                 this.offlineEventListener = () => {
                     this.onClose("transport close", {
-                        description: "network connection lost"
+                        description: "network connection lost",
                     });
                 };
                 addEventListener("offline", this.offlineEventListener, false);
@@ -6443,9 +7002,9 @@ function queryKey(uri, query) {
     /**
      * Creates transport of the given type.
      *
-     * @param {String} transport name
+     * @param {String} name - transport name
      * @return {Transport}
-     * @api private
+     * @private
      */
     createTransport(name) {
         const query = Object.assign({}, this.opts.query);
@@ -6456,19 +7015,19 @@ function queryKey(uri, query) {
         // session id if we already have one
         if (this.id)
             query.sid = this.id;
-        const opts = Object.assign({}, this.opts.transportOptions[name], this.opts, {
+        const opts = Object.assign({}, this.opts, {
             query,
             socket: this,
             hostname: this.hostname,
             secure: this.secure,
-            port: this.port
-        });
+            port: this.port,
+        }, this.opts.transportOptions[name]);
         return new transports[name](opts);
     }
     /**
      * Initializes transport to use and starts probe.
      *
-     * @api private
+     * @private
      */
     open() {
         let transport;
@@ -6503,7 +7062,7 @@ function queryKey(uri, query) {
     /**
      * Sets the current transport. Disables the existing one (if any).
      *
-     * @api private
+     * @private
      */
     setTransport(transport) {
         if (this.transport) {
@@ -6516,13 +7075,13 @@ function queryKey(uri, query) {
             .on("drain", this.onDrain.bind(this))
             .on("packet", this.onPacket.bind(this))
             .on("error", this.onError.bind(this))
-            .on("close", reason => this.onClose("transport close", reason));
+            .on("close", (reason) => this.onClose("transport close", reason));
     }
     /**
      * Probes a transport.
      *
-     * @param {String} transport name
-     * @api private
+     * @param {String} name - transport name
+     * @private
      */
     probe(name) {
         let transport = this.createTransport(name);
@@ -6532,7 +7091,7 @@ function queryKey(uri, query) {
             if (failed)
                 return;
             transport.send([{ type: "ping", data: "probe" }]);
-            transport.once("packet", msg => {
+            transport.once("packet", (msg) => {
                 if (failed)
                     return;
                 if ("pong" === msg.type && "probe" === msg.data) {
@@ -6573,7 +7132,7 @@ function queryKey(uri, query) {
             transport = null;
         }
         // Handle any error that happens while probing
-        const onerror = err => {
+        const onerror = (err) => {
             const error = new Error("probe error: " + err);
             // @ts-ignore
             error.transport = transport.name;
@@ -6606,12 +7165,23 @@ function queryKey(uri, query) {
         transport.once("close", onTransportClose);
         this.once("close", onclose);
         this.once("upgrading", onupgrade);
-        transport.open();
+        if (this.upgrades.indexOf("webtransport") !== -1 &&
+            name !== "webtransport") {
+            // favor WebTransport
+            this.setTimeoutFn(() => {
+                if (!failed) {
+                    transport.open();
+                }
+            }, 200);
+        }
+        else {
+            transport.open();
+        }
     }
     /**
      * Called when connection is deemed open.
      *
-     * @api private
+     * @private
      */
     onOpen() {
         this.readyState = "open";
@@ -6620,9 +7190,7 @@ function queryKey(uri, query) {
         this.flush();
         // we check for `readyState` in case an `open`
         // listener already closed the socket
-        if ("open" === this.readyState &&
-            this.opts.upgrade &&
-            this.transport.pause) {
+        if ("open" === this.readyState && this.opts.upgrade) {
             let i = 0;
             const l = this.upgrades.length;
             for (; i < l; i++) {
@@ -6633,7 +7201,7 @@ function queryKey(uri, query) {
     /**
      * Handles a packet.
      *
-     * @api private
+     * @private
      */
     onPacket(packet) {
         if ("opening" === this.readyState ||
@@ -6642,12 +7210,12 @@ function queryKey(uri, query) {
             this.emitReserved("packet", packet);
             // Socket is live - any packet counts
             this.emitReserved("heartbeat");
+            this.resetPingTimeout();
             switch (packet.type) {
                 case "open":
                     this.onHandshake(JSON.parse(packet.data));
                     break;
                 case "ping":
-                    this.resetPingTimeout();
                     this.sendPacket("pong");
                     this.emitReserved("ping");
                     this.emitReserved("pong");
@@ -6669,7 +7237,7 @@ function queryKey(uri, query) {
      * Called upon handshake completion.
      *
      * @param {Object} data - handshake obj
-     * @api private
+     * @private
      */
     onHandshake(data) {
         this.emitReserved("handshake", data);
@@ -6688,7 +7256,7 @@ function queryKey(uri, query) {
     /**
      * Sets and resets ping timeout timer based on server pings.
      *
-     * @api private
+     * @private
      */
     resetPingTimeout() {
         this.clearTimeoutFn(this.pingTimeoutTimer);
@@ -6702,7 +7270,7 @@ function queryKey(uri, query) {
     /**
      * Called on `drain` event
      *
-     * @api private
+     * @private
      */
     onDrain() {
         this.writeBuffer.splice(0, this.prevBufferLen);
@@ -6720,7 +7288,7 @@ function queryKey(uri, query) {
     /**
      * Flush write buffers.
      *
-     * @api private
+     * @private
      */
     flush() {
         if ("closed" !== this.readyState &&
@@ -6764,11 +7332,10 @@ function queryKey(uri, query) {
     /**
      * Sends a message.
      *
-     * @param {String} message.
-     * @param {Function} callback function.
+     * @param {String} msg - message.
      * @param {Object} options.
+     * @param {Function} callback function.
      * @return {Socket} for chaining.
-     * @api public
      */
     write(msg, options, fn) {
         this.sendPacket("message", msg, options, fn);
@@ -6781,11 +7348,11 @@ function queryKey(uri, query) {
     /**
      * Sends a packet.
      *
-     * @param {String} packet type.
+     * @param {String} type: packet type.
      * @param {String} data.
      * @param {Object} options.
-     * @param {Function} callback function.
-     * @api private
+     * @param {Function} fn - callback function.
+     * @private
      */
     sendPacket(type, data, options, fn) {
         if ("function" === typeof data) {
@@ -6804,7 +7371,7 @@ function queryKey(uri, query) {
         const packet = {
             type: type,
             data: data,
-            options: options
+            options: options,
         };
         this.emitReserved("packetCreate", packet);
         this.writeBuffer.push(packet);
@@ -6814,8 +7381,6 @@ function queryKey(uri, query) {
     }
     /**
      * Closes the connection.
-     *
-     * @api public
      */
     close() {
         const close = () => {
@@ -6856,7 +7421,7 @@ function queryKey(uri, query) {
     /**
      * Called upon transport error
      *
-     * @api private
+     * @private
      */
     onError(err) {
         Socket$1.priorWebsocketSuccess = false;
@@ -6866,7 +7431,7 @@ function queryKey(uri, query) {
     /**
      * Called upon transport close.
      *
-     * @api private
+     * @private
      */
     onClose(reason, description) {
         if ("opening" === this.readyState ||
@@ -6899,9 +7464,8 @@ function queryKey(uri, query) {
     /**
      * Filters upgrades, returning only those matching client transports.
      *
-     * @param {Array} server upgrades
-     * @api private
-     *
+     * @param {Array} upgrades - server upgrades
+     * @private
      */
     filterUpgrades(upgrades) {
         const filteredUpgrades = [];
@@ -7071,7 +7635,7 @@ function _deconstructPacket(data, buffers) {
  */
 function reconstructPacket(packet, buffers) {
     packet.data = _reconstructPacket(packet.data, buffers);
-    packet.attachments = undefined; // no longer useful
+    delete packet.attachments; // no longer useful
     return packet;
 }
 function _reconstructPacket(data, buffers) {
@@ -7102,6 +7666,17 @@ function _reconstructPacket(data, buffers) {
     }
     return data;
 }/**
+ * These strings must not be used as event names, as they have a special meaning.
+ */
+const RESERVED_EVENTS$1 = [
+    "connect",
+    "connect_error",
+    "disconnect",
+    "disconnecting",
+    "newListener",
+    "removeListener", // used by the Node.js EventEmitter
+];
+/**
  * Protocol version.
  *
  * @public
@@ -7138,11 +7713,14 @@ class Encoder {
     encode(obj) {
         if (obj.type === PacketType.EVENT || obj.type === PacketType.ACK) {
             if (hasBinary(obj)) {
-                obj.type =
-                    obj.type === PacketType.EVENT
+                return this.encodeAsBinary({
+                    type: obj.type === PacketType.EVENT
                         ? PacketType.BINARY_EVENT
-                        : PacketType.BINARY_ACK;
-                return this.encodeAsBinary(obj);
+                        : PacketType.BINARY_ACK,
+                    nsp: obj.nsp,
+                    data: obj.data,
+                    id: obj.id,
+                });
             }
         }
         return [this.encodeAsString(obj)];
@@ -7186,6 +7764,10 @@ class Encoder {
         return buffers; // write all the buffers
     }
 }
+// see https://stackoverflow.com/questions/8511281/check-if-a-value-is-an-object-in-javascript
+function isObject(value) {
+    return Object.prototype.toString.call(value) === "[object Object]";
+}
 /**
  * A socket.io Decoder instance
  *
@@ -7213,8 +7795,9 @@ class Decoder extends Emitter {
                 throw new Error("got plaintext data when reconstructing a packet");
             }
             packet = this.decodeString(obj);
-            if (packet.type === PacketType.BINARY_EVENT ||
-                packet.type === PacketType.BINARY_ACK) {
+            const isBinaryEvent = packet.type === PacketType.BINARY_EVENT;
+            if (isBinaryEvent || packet.type === PacketType.BINARY_ACK) {
+                packet.type = isBinaryEvent ? PacketType.EVENT : PacketType.ACK;
                 // binary packet's json
                 this.reconstructor = new BinaryReconstructor(packet);
                 // no attachments, labeled binary but no binary data to follow
@@ -7324,14 +7907,17 @@ class Decoder extends Emitter {
     static isPayloadValid(type, payload) {
         switch (type) {
             case PacketType.CONNECT:
-                return typeof payload === "object";
+                return isObject(payload);
             case PacketType.DISCONNECT:
                 return payload === undefined;
             case PacketType.CONNECT_ERROR:
-                return typeof payload === "string" || typeof payload === "object";
+                return typeof payload === "string" || isObject(payload);
             case PacketType.EVENT:
             case PacketType.BINARY_EVENT:
-                return Array.isArray(payload) && payload.length > 0;
+                return (Array.isArray(payload) &&
+                    (typeof payload[0] === "number" ||
+                        (typeof payload[0] === "string" &&
+                            RESERVED_EVENTS$1.indexOf(payload[0]) === -1)));
             case PacketType.ACK:
             case PacketType.BINARY_ACK:
                 return Array.isArray(payload);
@@ -7343,6 +7929,7 @@ class Decoder extends Emitter {
     destroy() {
         if (this.reconstructor) {
             this.reconstructor.finishedReconstruction();
+            this.reconstructor = null;
         }
     }
 }
@@ -7449,6 +8036,11 @@ class Socket extends Emitter {
          */
         this.connected = false;
         /**
+         * Whether the connection state was recovered after a temporary disconnection. In that case, any missed packets will
+         * be transmitted by the server.
+         */
+        this.recovered = false;
+        /**
          * Buffer for packets received before the CONNECT packet
          */
         this.receiveBuffer = [];
@@ -7456,6 +8048,18 @@ class Socket extends Emitter {
          * Buffer for packets that will be sent once the socket is connected
          */
         this.sendBuffer = [];
+        /**
+         * The queue of packets to be sent with retry in case of failure.
+         *
+         * Packets are sent one by one, each waiting for the server acknowledgement, in order to guarantee the delivery order.
+         * @private
+         */
+        this._queue = [];
+        /**
+         * A sequence to generate the ID of the {@link QueuedPacket}.
+         * @private
+         */
+        this._queueSeq = 0;
         this.ids = 0;
         this.acks = {};
         this.flags = {};
@@ -7464,6 +8068,7 @@ class Socket extends Emitter {
         if (opts && opts.auth) {
             this.auth = opts.auth;
         }
+        this._opts = Object.assign({}, opts);
         if (this.io._autoConnect)
             this.open();
     }
@@ -7588,6 +8193,10 @@ class Socket extends Emitter {
             throw new Error('"' + ev.toString() + '" is a reserved event name');
         }
         args.unshift(ev);
+        if (this._opts.retries && !this.flags.fromQueue && !this.flags.volatile) {
+            this._addToQueue(args);
+            return this;
+        }
         const packet = {
             type: PacketType.EVENT,
             data: args,
@@ -7620,7 +8229,8 @@ class Socket extends Emitter {
      * @private
      */
     _registerAckCallback(id, ack) {
-        const timeout = this.flags.timeout;
+        var _a;
+        const timeout = (_a = this.flags.timeout) !== null && _a !== void 0 ? _a : this._opts.ackTimeout;
         if (timeout === undefined) {
             this.acks[id] = ack;
             return;
@@ -7642,6 +8252,99 @@ class Socket extends Emitter {
         };
     }
     /**
+     * Emits an event and waits for an acknowledgement
+     *
+     * @example
+     * // without timeout
+     * const response = await socket.emitWithAck("hello", "world");
+     *
+     * // with a specific timeout
+     * try {
+     *   const response = await socket.timeout(1000).emitWithAck("hello", "world");
+     * } catch (err) {
+     *   // the server did not acknowledge the event in the given delay
+     * }
+     *
+     * @return a Promise that will be fulfilled when the server acknowledges the event
+     */
+    emitWithAck(ev, ...args) {
+        // the timeout flag is optional
+        const withErr = this.flags.timeout !== undefined || this._opts.ackTimeout !== undefined;
+        return new Promise((resolve, reject) => {
+            args.push((arg1, arg2) => {
+                if (withErr) {
+                    return arg1 ? reject(arg1) : resolve(arg2);
+                }
+                else {
+                    return resolve(arg1);
+                }
+            });
+            this.emit(ev, ...args);
+        });
+    }
+    /**
+     * Add the packet to the queue.
+     * @param args
+     * @private
+     */
+    _addToQueue(args) {
+        let ack;
+        if (typeof args[args.length - 1] === "function") {
+            ack = args.pop();
+        }
+        const packet = {
+            id: this._queueSeq++,
+            tryCount: 0,
+            pending: false,
+            args,
+            flags: Object.assign({ fromQueue: true }, this.flags),
+        };
+        args.push((err, ...responseArgs) => {
+            if (packet !== this._queue[0]) {
+                // the packet has already been acknowledged
+                return;
+            }
+            const hasError = err !== null;
+            if (hasError) {
+                if (packet.tryCount > this._opts.retries) {
+                    this._queue.shift();
+                    if (ack) {
+                        ack(err);
+                    }
+                }
+            }
+            else {
+                this._queue.shift();
+                if (ack) {
+                    ack(null, ...responseArgs);
+                }
+            }
+            packet.pending = false;
+            return this._drainQueue();
+        });
+        this._queue.push(packet);
+        this._drainQueue();
+    }
+    /**
+     * Send the first packet of the queue, and wait for an acknowledgement from the server.
+     * @param force - whether to resend a packet that has not been acknowledged yet
+     *
+     * @private
+     */
+    _drainQueue(force = false) {
+        if (!this.connected || this._queue.length === 0) {
+            return;
+        }
+        const packet = this._queue[0];
+        if (packet.pending && !force) {
+            return;
+        }
+        packet.pending = true;
+        packet.tryCount++;
+        this.flags = packet.flags;
+        this.emit.apply(this, packet.args);
+    }
+    /**
      * Sends a packet.
      *
      * @param packet
@@ -7659,12 +8362,26 @@ class Socket extends Emitter {
     onopen() {
         if (typeof this.auth == "function") {
             this.auth((data) => {
-                this.packet({ type: PacketType.CONNECT, data });
+                this._sendConnectPacket(data);
             });
         }
         else {
-            this.packet({ type: PacketType.CONNECT, data: this.auth });
+            this._sendConnectPacket(this.auth);
         }
+    }
+    /**
+     * Sends a CONNECT packet to initiate the Socket.IO session.
+     *
+     * @param data
+     * @private
+     */
+    _sendConnectPacket(data) {
+        this.packet({
+            type: PacketType.CONNECT,
+            data: this._pid
+                ? Object.assign({ pid: this._pid, offset: this._lastOffset }, data)
+                : data,
+        });
     }
     /**
      * Called upon engine or manager `error`.
@@ -7702,8 +8419,7 @@ class Socket extends Emitter {
         switch (packet.type) {
             case PacketType.CONNECT:
                 if (packet.data && packet.data.sid) {
-                    const id = packet.data.sid;
-                    this.onconnect(id);
+                    this.onconnect(packet.data.sid, packet.data.pid);
                 }
                 else {
                     this.emitReserved("connect_error", new Error("It seems you are trying to reach a Socket.IO server in v2.x with a v3.x client, but they are not compatible (more information here: https://socket.io/docs/v3/migrating-from-2-x-to-3-0/)"));
@@ -7755,6 +8471,9 @@ class Socket extends Emitter {
             }
         }
         super.emit.apply(this, args);
+        if (this._pid && args.length && typeof args[args.length - 1] === "string") {
+            this._lastOffset = args[args.length - 1];
+        }
     }
     /**
      * Produces an ack callback to emit with an event.
@@ -7794,11 +8513,14 @@ class Socket extends Emitter {
      *
      * @private
      */
-    onconnect(id) {
+    onconnect(id, pid) {
         this.id = id;
+        this.recovered = pid && this._pid === pid;
+        this._pid = pid; // defined only if connection state recovery is enabled
         this.connected = true;
         this.emitBuffered();
         this.emitReserved("connect");
+        this._drainQueue(true);
     }
     /**
      * Emit buffered events (received and emitted).
@@ -8262,36 +8984,33 @@ Backoff.prototype.setJitter = function (jitter) {
             self.onopen();
             fn && fn();
         });
-        // emit `error`
-        const errorSub = on(socket, "error", (err) => {
-            self.cleanup();
-            self._readyState = "closed";
+        const onError = (err) => {
+            this.cleanup();
+            this._readyState = "closed";
             this.emitReserved("error", err);
             if (fn) {
                 fn(err);
             }
             else {
                 // Only do this if there is no fn to handle the error
-                self.maybeReconnectOnOpen();
+                this.maybeReconnectOnOpen();
             }
-        });
+        };
+        // emit `error`
+        const errorSub = on(socket, "error", onError);
         if (false !== this._timeout) {
             const timeout = this._timeout;
-            if (timeout === 0) {
-                openSubDestroy(); // prevents a race condition with the 'open' event
-            }
             // set timer
             const timer = this.setTimeoutFn(() => {
                 openSubDestroy();
+                onError(new Error("timeout"));
                 socket.close();
-                // @ts-ignore
-                socket.emit("error", new Error("timeout"));
             }, timeout);
             if (this.opts.autoUnref) {
                 timer.unref();
             }
-            this.subs.push(function subDestroy() {
-                clearTimeout(timer);
+            this.subs.push(() => {
+                this.clearTimeoutFn(timer);
             });
         }
         this.subs.push(openSubDestroy);
@@ -8373,6 +9092,9 @@ Backoff.prototype.setJitter = function (jitter) {
         if (!socket) {
             socket = new Socket(this, nsp, opts);
             this.nsps[nsp] = socket;
+        }
+        else if (this._autoConnect && !socket.active) {
+            socket.connect();
         }
         return socket;
     }
@@ -8486,8 +9208,8 @@ Backoff.prototype.setJitter = function (jitter) {
             if (this.opts.autoUnref) {
                 timer.unref();
             }
-            this.subs.push(function subDestroy() {
-                clearTimeout(timer);
+            this.subs.push(() => {
+                this.clearTimeoutFn(timer);
             });
         }
     }
@@ -8543,9 +9265,9 @@ Object.assign(lookup, {
     Socket,
     io: lookup,
     connect: lookup,
-});var io=/*#__PURE__*/Object.freeze({__proto__:null,Manager:Manager,Socket:Socket,io:lookup,connect:lookup,'default':lookup,protocol:protocol});var SimpleSignalClient = require('simple-signal-client');
+});var io=/*#__PURE__*/Object.freeze({__proto__:null,Manager:Manager,Socket:Socket,io:lookup,connect:lookup,'default':lookup,protocol:protocol});var SimpleSignalClient = require("simple-signal-client");
 var script$1 = /*#__PURE__*/vue.defineComponent({
-  name: 'vue-webrtc',
+  name: "vue-webrtc",
   components: {},
   data: function data() {
     return {
@@ -8558,11 +9280,11 @@ var script$1 = /*#__PURE__*/vue.defineComponent({
   props: {
     roomId: {
       type: String,
-      default: 'public-room-v2'
+      default: "public-room-v2"
     },
     socketURL: {
       type: String,
-      default: 'https://weston-vue-webrtc-lobby.azurewebsites.net'
+      default: "https://weston-vue-webrtc-lobby.azurewebsites.net"
       //default: 'https://localhost:3000'
       //default: 'https://192.168.1.201:3000'
     },
@@ -8577,7 +9299,7 @@ var script$1 = /*#__PURE__*/vue.defineComponent({
     },
     screenshotFormat: {
       type: String,
-      default: 'image/jpeg'
+      default: "image/jpeg"
     },
     enableAudio: {
       type: Boolean,
@@ -8604,7 +9326,7 @@ var script$1 = /*#__PURE__*/vue.defineComponent({
       default: function _default() {
         return {
           rejectUnauthorized: false,
-          transports: ['polling', 'websocket']
+          transports: ["polling", "websocket"]
         };
       }
     },
@@ -8621,126 +9343,120 @@ var script$1 = /*#__PURE__*/vue.defineComponent({
       return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3() {
         var that, constraints, localStream;
         return _regeneratorRuntime().wrap(function _callee3$(_context3) {
-          while (1) {
-            switch (_context3.prev = _context3.next) {
-              case 0:
-                that = _this;
-                _this.log('join');
-                _this.socket = lookup(_this.socketURL, _this.ioOptions);
-                _this.signalClient = new SimpleSignalClient(_this.socket);
-                constraints = {
-                  video: that.enableVideo,
-                  audio: that.enableAudio
+          while (1) switch (_context3.prev = _context3.next) {
+            case 0:
+              that = _this;
+              _this.log("join");
+              _this.socket = lookup(_this.socketURL, _this.ioOptions);
+              _this.signalClient = new SimpleSignalClient(_this.socket);
+              constraints = {
+                video: that.enableVideo,
+                audio: that.enableAudio
+              };
+              if (that.deviceId && that.enableVideo) {
+                constraints.video = {
+                  deviceId: {
+                    exact: that.deviceId
+                  }
                 };
-                if (that.deviceId && that.enableVideo) {
-                  constraints.video = {
-                    deviceId: {
-                      exact: that.deviceId
-                    }
-                  };
+              }
+              _context3.next = 8;
+              return navigator.mediaDevices.getUserMedia(constraints);
+            case 8:
+              localStream = _context3.sent;
+              _this.log("opened", localStream);
+              _this.joinedRoom(localStream, true, false);
+              _this.signalClient.once("discover", function (discoveryData) {
+                that.log("discovered", discoveryData);
+                function connectToPeer(_x) {
+                  return _connectToPeer.apply(this, arguments);
                 }
-                _context3.next = 8;
-                return navigator.mediaDevices.getUserMedia(constraints);
-              case 8:
-                localStream = _context3.sent;
-                _this.log('opened', localStream);
-                _this.joinedRoom(localStream, true);
-                _this.signalClient.once('discover', function (discoveryData) {
-                  that.log('discovered', discoveryData);
-                  function connectToPeer(_x) {
-                    return _connectToPeer.apply(this, arguments);
-                  }
-                  function _connectToPeer() {
-                    _connectToPeer = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(peerID) {
-                      var _yield$that$signalCli, peer;
-                      return _regeneratorRuntime().wrap(function _callee$(_context) {
-                        while (1) {
-                          switch (_context.prev = _context.next) {
-                            case 0:
-                              if (!(peerID == that.socket.id)) {
-                                _context.next = 2;
-                                break;
-                              }
-                              return _context.abrupt("return");
-                            case 2:
-                              _context.prev = 2;
-                              that.log('Connecting to peer');
-                              _context.next = 6;
-                              return that.signalClient.connect(peerID, that.roomId, that.peerOptions);
-                            case 6:
-                              _yield$that$signalCli = _context.sent;
-                              peer = _yield$that$signalCli.peer;
-                              that.videoList.forEach(function (v) {
-                                if (v.isLocal) {
-                                  that.onPeer(peer, v.stream);
-                                }
-                              });
-                              _context.next = 14;
-                              break;
-                            case 11:
-                              _context.prev = 11;
-                              _context.t0 = _context["catch"](2);
-                              that.log('Error connecting to peer');
-                            case 14:
-                            case "end":
-                              return _context.stop();
+                function _connectToPeer() {
+                  _connectToPeer = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(peerID) {
+                    var _yield$that$signalCli, peer;
+                    return _regeneratorRuntime().wrap(function _callee$(_context) {
+                      while (1) switch (_context.prev = _context.next) {
+                        case 0:
+                          if (!(peerID == that.socket.id)) {
+                            _context.next = 2;
+                            break;
                           }
-                        }
-                      }, _callee, null, [[2, 11]]);
-                    }));
-                    return _connectToPeer.apply(this, arguments);
-                  }
-                  discoveryData.peers.forEach(function (peerID) {
-                    return connectToPeer(peerID);
-                  });
-                  that.$emit('opened-room', that.roomId);
-                });
-                _this.signalClient.on('request', /*#__PURE__*/function () {
-                  var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(request) {
-                    var _yield$request$accept, peer;
-                    return _regeneratorRuntime().wrap(function _callee2$(_context2) {
-                      while (1) {
-                        switch (_context2.prev = _context2.next) {
-                          case 0:
-                            that.log('requested', request);
-                            _context2.next = 3;
-                            return request.accept({}, that.peerOptions);
-                          case 3:
-                            _yield$request$accept = _context2.sent;
-                            peer = _yield$request$accept.peer;
-                            that.log('accepted', peer);
-                            that.videoList.forEach(function (v) {
-                              if (v.isLocal) {
-                                that.onPeer(peer, v.stream);
-                              }
-                            });
-                          case 7:
-                          case "end":
-                            return _context2.stop();
-                        }
+                          return _context.abrupt("return");
+                        case 2:
+                          _context.prev = 2;
+                          that.log("Connecting to peer");
+                          _context.next = 6;
+                          return that.signalClient.connect(peerID, that.roomId, that.peerOptions);
+                        case 6:
+                          _yield$that$signalCli = _context.sent;
+                          peer = _yield$that$signalCli.peer;
+                          that.videoList.forEach(function (v) {
+                            if (v.isLocal) {
+                              that.onPeer(peer, v.stream);
+                            }
+                          });
+                          _context.next = 14;
+                          break;
+                        case 11:
+                          _context.prev = 11;
+                          _context.t0 = _context["catch"](2);
+                          that.log("Error connecting to peer");
+                        case 14:
+                        case "end":
+                          return _context.stop();
                       }
-                    }, _callee2);
+                    }, _callee, null, [[2, 11]]);
                   }));
-                  return function (_x2) {
-                    return _ref.apply(this, arguments);
-                  };
-                }());
-                _this.signalClient.discover(that.roomId);
-              case 14:
-              case "end":
-                return _context3.stop();
-            }
+                  return _connectToPeer.apply(this, arguments);
+                }
+                discoveryData.peers.forEach(function (peerID) {
+                  return connectToPeer(peerID);
+                });
+                that.$emit("opened-room", that.roomId);
+              });
+              _this.signalClient.on("request", /*#__PURE__*/function () {
+                var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(request) {
+                  var _yield$request$accept, peer;
+                  return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+                    while (1) switch (_context2.prev = _context2.next) {
+                      case 0:
+                        that.log("requested", request);
+                        _context2.next = 3;
+                        return request.accept({}, that.peerOptions);
+                      case 3:
+                        _yield$request$accept = _context2.sent;
+                        peer = _yield$request$accept.peer;
+                        that.log("accepted", peer);
+                        that.videoList.forEach(function (v) {
+                          if (v.isLocal) {
+                            that.onPeer(peer, v.stream);
+                          }
+                        });
+                      case 7:
+                      case "end":
+                        return _context2.stop();
+                    }
+                  }, _callee2);
+                }));
+                return function (_x2) {
+                  return _ref.apply(this, arguments);
+                };
+              }());
+              _this.signalClient.discover(that.roomId);
+            case 14:
+            case "end":
+              return _context3.stop();
           }
         }, _callee3);
       }))();
     },
     onPeer: function onPeer(peer, localStream) {
       var that = this;
-      that.log('onPeer');
+      that.log("onPeer");
       peer.addStream(localStream);
-      peer.on('stream', function (remoteStream) {
-        that.joinedRoom(remoteStream, false);
-        peer.on('close', function () {
+      peer.on("stream", function (remoteStream) {
+        that.joinedRoom(remoteStream, false, false);
+        peer.on("close", function () {
           var newList = [];
           that.videoList.forEach(function (item) {
             if (item.id !== remoteStream.id) {
@@ -8748,14 +9464,14 @@ var script$1 = /*#__PURE__*/vue.defineComponent({
             }
           });
           that.videoList = newList;
-          that.$emit('left-room', remoteStream.id);
+          that.$emit("left-room", remoteStream.id);
         });
-        peer.on('error', function (err) {
-          that.log('peer error ', err);
+        peer.on("error", function (err) {
+          that.log("peer error ", err);
         });
       });
     },
-    joinedRoom: function joinedRoom(stream, isLocal) {
+    joinedRoom: function joinedRoom(stream, isLocal, shareScreen) {
       var that = this;
       var found = that.videoList.find(function (video) {
         return video.id === stream.id;
@@ -8765,7 +9481,8 @@ var script$1 = /*#__PURE__*/vue.defineComponent({
           id: stream.id,
           muted: isLocal,
           stream: stream,
-          isLocal: isLocal
+          isLocal: isLocal,
+          shareScreen: shareScreen
         };
         that.videoList.push(video);
       }
@@ -8777,7 +9494,7 @@ var script$1 = /*#__PURE__*/vue.defineComponent({
           }
         }
       }, 500);
-      that.$emit('joined-room', stream.id);
+      that.$emit("joined-room", stream.id);
     },
     leave: function leave() {
       this.videoList.forEach(function (v) {
@@ -8800,11 +9517,11 @@ var script$1 = /*#__PURE__*/vue.defineComponent({
     getCanvas: function getCanvas() {
       var video = this.$refs.videos[0];
       if (video !== null && !this.ctx) {
-        var _canvas = document.createElement('canvas');
+        var _canvas = document.createElement("canvas");
         _canvas.height = video.clientHeight;
         _canvas.width = video.clientWidth;
         this.canvas = _canvas;
-        this.ctx = _canvas.getContext('2d');
+        this.ctx = _canvas.getContext("2d");
       }
       var ctx = this.ctx,
         canvas = this.canvas;
@@ -8816,40 +9533,38 @@ var script$1 = /*#__PURE__*/vue.defineComponent({
       return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee4() {
         var that, screenStream;
         return _regeneratorRuntime().wrap(function _callee4$(_context4) {
-          while (1) {
-            switch (_context4.prev = _context4.next) {
-              case 0:
-                that = _this2;
-                if (!(navigator.mediaDevices == undefined)) {
-                  _context4.next = 4;
-                  break;
-                }
-                that.log('Error: https is required to load cameras');
-                return _context4.abrupt("return");
-              case 4:
-                _context4.prev = 4;
-                _context4.next = 7;
-                return navigator.mediaDevices.getDisplayMedia({
-                  video: true,
-                  audio: false
-                });
-              case 7:
-                screenStream = _context4.sent;
-                _this2.joinedRoom(screenStream, true);
-                that.$emit('share-started', screenStream.id);
-                that.signalClient.peers().forEach(function (p) {
-                  return that.onPeer(p, screenStream);
-                });
-                _context4.next = 16;
+          while (1) switch (_context4.prev = _context4.next) {
+            case 0:
+              that = _this2;
+              if (!(navigator.mediaDevices == undefined)) {
+                _context4.next = 4;
                 break;
-              case 13:
-                _context4.prev = 13;
-                _context4.t0 = _context4["catch"](4);
-                that.log('Media error: ' + JSON.stringify(_context4.t0));
-              case 16:
-              case "end":
-                return _context4.stop();
-            }
+              }
+              that.log("Error: https is required to load cameras");
+              return _context4.abrupt("return");
+            case 4:
+              _context4.prev = 4;
+              _context4.next = 7;
+              return navigator.mediaDevices.getDisplayMedia({
+                video: true,
+                audio: false
+              });
+            case 7:
+              screenStream = _context4.sent;
+              _this2.joinedRoom(screenStream, true, true);
+              that.$emit("share-started", screenStream.id);
+              that.signalClient.peers().forEach(function (p) {
+                return that.onPeer(p, screenStream);
+              });
+              _context4.next = 16;
+              break;
+            case 13:
+              _context4.prev = 13;
+              _context4.t0 = _context4["catch"](4);
+              that.log("Media error: " + JSON.stringify(_context4.t0));
+            case 16:
+            case "end":
+              return _context4.stop();
           }
         }, _callee4, null, [[4, 13]]);
       }))();
@@ -8910,9 +9625,9 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
   } else {
     style.appendChild(document.createTextNode(css));
   }
-}var css_248z$1 = "\n.video-list[data-v-41044b41] {\r\n        background: whitesmoke;\r\n        height: auto;\r\n        display: flex;\r\n        flex-direction: row;\r\n        justify-content: center;\r\n        flex-wrap: wrap;\n}\n.video-list div[data-v-41044b41] {\r\n            padding: 0px;\n}\n.video-item[data-v-41044b41] {\r\n        background: #c5c4c4;\r\n        display: inline-block;\n}\r\n";
+}var css_248z$1 = "\n.video-list[data-v-0df0a4f0] {\n  background: whitesmoke;\n  height: auto;\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  flex-wrap: wrap;\n}\n.video-list div[data-v-0df0a4f0] {\n  padding: 0px;\n}\n.video-item[data-v-0df0a4f0] {\n  background: #c5c4c4;\n  display: inline-block;\n}\n";
 styleInject(css_248z$1);script$1.render = render$1;
-script$1.__scopeId = "data-v-41044b41";var script = /*#__PURE__*/vue.defineComponent({
+script$1.__scopeId = "data-v-0df0a4f0";var script = /*#__PURE__*/vue.defineComponent({
   name: 'VueWebrtcSample',
   // vue component name
   data: function data() {
@@ -8976,9 +9691,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return _ctx.reset && _ctx.reset.apply(_ctx, arguments);
     })
   }, " Reset ")]);
-}var css_248z = "\n.vue-webrtc-sample[data-v-3020e3b4] {\r\n    display: block;\r\n    width: 400px;\r\n    margin: 25px auto;\r\n    border: 1px solid #ccc;\r\n    background: #eaeaea;\r\n    text-align: center;\r\n    padding: 25px;\n}\n.vue-webrtc-sample p[data-v-3020e3b4] {\r\n    margin: 0 0 1em;\n}\r\n";
+}var css_248z = "\n.vue-webrtc-sample[data-v-45861803] {\n    display: block;\n    width: 400px;\n    margin: 25px auto;\n    border: 1px solid #ccc;\n    background: #eaeaea;\n    text-align: center;\n    padding: 25px;\n}\n.vue-webrtc-sample p[data-v-45861803] {\n    margin: 0 0 1em;\n}\n";
 styleInject(css_248z);script.render = render;
-script.__scopeId = "data-v-3020e3b4";/* eslint-disable import/prefer-default-export */
+script.__scopeId = "data-v-45861803";/* eslint-disable import/prefer-default-export */
 window.io = io;var components$1=/*#__PURE__*/Object.freeze({__proto__:null,VueWebRTC:script$1,VueWebrtcSample:script});// install function executed by Vue.use()
 var install = function installVueWebrtc(app) {
   Object.entries(components$1).forEach(function (_ref) {
