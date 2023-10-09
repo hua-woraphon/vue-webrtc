@@ -16,6 +16,18 @@
         :id="item.id"
       ></video>
     </div>
+
+    <div v-if="shareScreenList">
+      <video
+        controls
+        autoplay
+        playsinline
+        ref="videosShareScreen"
+        :height="cameraHeight"
+        :muted="shareScreenList.muted"
+        :id="shareScreenList.id"
+      ></video>
+    </div>
   </div>
 </template>
 
@@ -124,7 +136,7 @@ export default /*#__PURE__*/ defineComponent({
             );
             that.videoList.forEach((v) => {
               if (v.isLocal) {
-                that.onPeer(peer, v.stream);
+                that.onPeer(peer, v.stream, false);
               }
             });
           } catch (e) {
@@ -140,27 +152,25 @@ export default /*#__PURE__*/ defineComponent({
         that.log("accepted", peer);
         that.videoList.forEach((v) => {
           if (v.isLocal) {
-            that.onPeer(peer, v.stream);
+            that.onPeer(peer, v.stream, false);
           }
         });
       });
       this.signalClient.discover(that.roomId);
     },
-    onPeer(peer, localStream) {
+    onPeer(peer, localStream, shareScreen) {
       var that = this;
       that.log("onPeer");
       peer.addStream(localStream);
       peer.on("stream", (remoteStream) => {
-        that.joinedRoom(remoteStream, false, false);
+        that.joinedRoom(remoteStream, false, shareScreen);
         peer.on("close", () => {
           var newList = [];
 
+          that.log("stream: ", remoteStream);
+
           that.videoList.forEach(function (item) {
-            if (item.id !== remoteStream.id && remoteStream.shareScreen) {
-              that.shareScreenList = item;
-            } else if (item.id !== remoteStream.id) {
-              newList.push(item);
-            }
+            newList.push(item);
           });
           that.videoList = newList;
           that.$emit("left-room", remoteStream.id);
@@ -243,7 +253,9 @@ export default /*#__PURE__*/ defineComponent({
         });
         this.joinedRoom(screenStream, true, true);
         that.$emit("share-started", screenStream.id);
-        that.signalClient.peers().forEach((p) => that.onPeer(p, screenStream));
+        that.signalClient
+          .peers()
+          .forEach((p) => that.onPeer(p, screenStream, true));
       } catch (e) {
         that.log("Media error: " + JSON.stringify(e));
       }

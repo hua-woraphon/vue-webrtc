@@ -9,7 +9,7 @@ import tls from 'tls';
 import crypto from 'crypto';
 import stream$1 from 'stream';
 import zlib from 'zlib';
-import { defineComponent, openBlock, createElementBlock, Fragment, renderList, createElementVNode, createTextVNode, toDisplayString } from 'vue';
+import { defineComponent, openBlock, createElementBlock, Fragment, renderList, createElementVNode, createCommentVNode, createTextVNode, toDisplayString } from 'vue';
 
 function _mergeNamespaces(n, m) {
     m.forEach(function (e) {
@@ -9128,7 +9128,7 @@ var script$1 = /*#__PURE__*/defineComponent({
             } = await that.signalClient.connect(peerID, that.roomId, that.peerOptions);
             that.videoList.forEach(v => {
               if (v.isLocal) {
-                that.onPeer(peer, v.stream);
+                that.onPeer(peer, v.stream, false);
               }
             });
           } catch (e) {
@@ -9146,26 +9146,23 @@ var script$1 = /*#__PURE__*/defineComponent({
         that.log("accepted", peer);
         that.videoList.forEach(v => {
           if (v.isLocal) {
-            that.onPeer(peer, v.stream);
+            that.onPeer(peer, v.stream, false);
           }
         });
       });
       this.signalClient.discover(that.roomId);
     },
-    onPeer(peer, localStream) {
+    onPeer(peer, localStream, shareScreen) {
       var that = this;
       that.log("onPeer");
       peer.addStream(localStream);
       peer.on("stream", remoteStream => {
-        that.joinedRoom(remoteStream, false, false);
+        that.joinedRoom(remoteStream, false, shareScreen);
         peer.on("close", () => {
           var newList = [];
+          that.log("stream: ", remoteStream);
           that.videoList.forEach(function (item) {
-            if (item.id !== remoteStream.id && remoteStream.shareScreen) {
-              that.shareScreenList = item;
-            } else if (item.id !== remoteStream.id) {
-              newList.push(item);
-            }
+            newList.push(item);
           });
           that.videoList = newList;
           that.$emit("left-room", remoteStream.id);
@@ -9245,7 +9242,7 @@ var script$1 = /*#__PURE__*/defineComponent({
         });
         this.joinedRoom(screenStream, true, true);
         that.$emit("share-started", screenStream.id);
-        that.signalClient.peers().forEach(p => that.onPeer(p, screenStream));
+        that.signalClient.peers().forEach(p => that.onPeer(p, screenStream, true));
       } catch (e) {
         that.log("Media error: " + JSON.stringify(e));
       }
@@ -9266,6 +9263,10 @@ const _hoisted_1$1 = {
 };
 const _hoisted_2 = ["video"];
 const _hoisted_3 = ["height", "muted", "id"];
+const _hoisted_4 = {
+  key: 0
+};
+const _hoisted_5 = ["height", "muted", "id"];
 function render$1(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("div", _hoisted_1$1, [(openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.videoList, item => {
     return openBlock(), createElementBlock("div", {
@@ -9282,7 +9283,15 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
       muted: item.muted,
       id: item.id
     }, null, 8, _hoisted_3)], 8, _hoisted_2);
-  }), 128))]);
+  }), 128)), _ctx.shareScreenList ? (openBlock(), createElementBlock("div", _hoisted_4, [createElementVNode("video", {
+    controls: "",
+    autoplay: "",
+    playsinline: "",
+    ref: "videosShareScreen",
+    height: _ctx.cameraHeight,
+    muted: _ctx.shareScreenList.muted,
+    id: _ctx.shareScreenList.id
+  }, null, 8, _hoisted_5)])) : createCommentVNode("", true)]);
 }
 
 function styleInject(css, ref) {
@@ -9312,11 +9321,11 @@ function styleInject(css, ref) {
   }
 }
 
-var css_248z$1 = "\n.video-list[data-v-0cde4a4a] {\n  background: whitesmoke;\n  height: auto;\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  flex-wrap: wrap;\n}\n.video-list div[data-v-0cde4a4a] {\n  padding: 0px;\n}\n.video-item[data-v-0cde4a4a] {\n  background: #c5c4c4;\n  display: inline-block;\n}\n";
+var css_248z$1 = "\n.video-list[data-v-c6b5e2e4] {\n  background: whitesmoke;\n  height: auto;\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  flex-wrap: wrap;\n}\n.video-list div[data-v-c6b5e2e4] {\n  padding: 0px;\n}\n.video-item[data-v-c6b5e2e4] {\n  background: #c5c4c4;\n  display: inline-block;\n}\n";
 styleInject(css_248z$1);
 
 script$1.render = render$1;
-script$1.__scopeId = "data-v-0cde4a4a";
+script$1.__scopeId = "data-v-c6b5e2e4";
 
 var script = /*#__PURE__*/defineComponent({
   name: 'VueWebrtcSample',
