@@ -9273,7 +9273,6 @@ var script$1 = /*#__PURE__*/vue.defineComponent({
     return {
       signalClient: null,
       videoList: [],
-      shareScreenList: null,
       canvas: null,
       socket: null,
       localStream: null
@@ -9394,7 +9393,7 @@ var script$1 = /*#__PURE__*/vue.defineComponent({
                           peer = _yield$that$signalCli.peer;
                           that.videoList.forEach(function (v) {
                             if (v.isLocal) {
-                              that.onPeer(peer, v.stream, false);
+                              that.onPeer(peer, v.stream);
                             }
                           });
                           _context.next = 14;
@@ -9431,7 +9430,7 @@ var script$1 = /*#__PURE__*/vue.defineComponent({
                         that.log("accepted", peer);
                         that.videoList.forEach(function (v) {
                           if (v.isLocal) {
-                            that.onPeer(peer, v.stream, false);
+                            that.onPeer(peer, v.stream);
                           }
                         });
                       case 7:
@@ -9452,17 +9451,18 @@ var script$1 = /*#__PURE__*/vue.defineComponent({
         }, _callee3);
       }))();
     },
-    onPeer: function onPeer(peer, localStream, shareScreen) {
+    onPeer: function onPeer(peer, localStream) {
       var that = this;
       that.log("onPeer");
       peer.addStream(localStream);
       peer.on("stream", function (remoteStream) {
-        that.joinedRoom(remoteStream, false, true);
+        that.joinedRoom(remoteStream, false);
         peer.on("close", function () {
           var newList = [];
-          that.log("stream: ", remoteStream);
           that.videoList.forEach(function (item) {
-            newList.push(item);
+            if (item.id !== remoteStream.id) {
+              newList.push(item);
+            }
           });
           that.videoList = newList;
           that.$emit("left-room", remoteStream.id);
@@ -9472,7 +9472,7 @@ var script$1 = /*#__PURE__*/vue.defineComponent({
         });
       });
     },
-    joinedRoom: function joinedRoom(stream, isLocal, shareScreen) {
+    joinedRoom: function joinedRoom(stream, isLocal) {
       var that = this;
       var found = that.videoList.find(function (video) {
         return video.id === stream.id;
@@ -9482,14 +9482,9 @@ var script$1 = /*#__PURE__*/vue.defineComponent({
           id: stream.id,
           muted: isLocal,
           stream: stream,
-          isLocal: isLocal,
-          shareScreen: shareScreen
+          isLocal: isLocal
         };
-        if (!shareScreen) {
-          that.videoList.push(video);
-        } else {
-          that.shareScreenList = video;
-        }
+        that.videoList.push(video);
       }
       setTimeout(function () {
         for (var i = 0, len = that.$refs.videos.length; i < len; i++) {
@@ -9556,10 +9551,10 @@ var script$1 = /*#__PURE__*/vue.defineComponent({
               });
             case 7:
               screenStream = _context4.sent;
-              _this2.joinedRoom(screenStream, true, true);
+              _this2.joinedRoom(screenStream, true);
               that.$emit("share-started", screenStream.id);
               that.signalClient.peers().forEach(function (p) {
-                return that.onPeer(p, screenStream, true);
+                return that.onPeer(p, screenStream);
               });
               _context4.next = 16;
               break;
@@ -9588,10 +9583,6 @@ var script$1 = /*#__PURE__*/vue.defineComponent({
 };
 var _hoisted_2 = ["video"];
 var _hoisted_3 = ["height", "muted", "id"];
-var _hoisted_4 = {
-  key: 0
-};
-var _hoisted_5 = ["height", "muted", "id"];
 function render$1(_ctx, _cache, $props, $setup, $data, $options) {
   return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$1, [(vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.videoList, function (item) {
     return vue.openBlock(), vue.createElementBlock("div", {
@@ -9608,15 +9599,7 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
       muted: item.muted,
       id: item.id
     }, null, 8, _hoisted_3)], 8, _hoisted_2);
-  }), 128)), _ctx.shareScreenList ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_4, [vue.createElementVNode("video", {
-    controls: "",
-    autoplay: "",
-    playsinline: "",
-    ref: "videosShareScreen",
-    height: _ctx.cameraHeight,
-    muted: _ctx.shareScreenList.muted,
-    id: _ctx.shareScreenList.id
-  }, null, 8, _hoisted_5)])) : vue.createCommentVNode("", true)]);
+  }), 128))]);
 }function styleInject(css, ref) {
   if ( ref === void 0 ) ref = {};
   var insertAt = ref.insertAt;
@@ -9642,9 +9625,9 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
   } else {
     style.appendChild(document.createTextNode(css));
   }
-}var css_248z$1 = "\n.video-list[data-v-3ca5ce7c] {\n  background: whitesmoke;\n  height: auto;\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  flex-wrap: wrap;\n}\n.video-list div[data-v-3ca5ce7c] {\n  padding: 0px;\n}\n.video-item[data-v-3ca5ce7c] {\n  background: #c5c4c4;\n  display: inline-block;\n}\n";
+}var css_248z$1 = "\n.video-list[data-v-35ae4e52] {\n  background: whitesmoke;\n  height: auto;\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  flex-wrap: wrap;\n}\n.video-list div[data-v-35ae4e52] {\n  padding: 0px;\n}\n.video-item[data-v-35ae4e52] {\n  background: #c5c4c4;\n  display: inline-block;\n}\n";
 styleInject(css_248z$1);script$1.render = render$1;
-script$1.__scopeId = "data-v-3ca5ce7c";var script = /*#__PURE__*/vue.defineComponent({
+script$1.__scopeId = "data-v-35ae4e52";var script = /*#__PURE__*/vue.defineComponent({
   name: 'VueWebrtcSample',
   // vue component name
   data: function data() {
