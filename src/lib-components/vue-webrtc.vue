@@ -46,6 +46,7 @@ export default /*#__PURE__*/ defineComponent({
       shareScreenList: null,
       canvas: null,
       socket: null,
+      localStream: null,
     };
   },
   props: {
@@ -118,11 +119,9 @@ export default /*#__PURE__*/ defineComponent({
       if (that.deviceId && that.enableVideo) {
         constraints.video = { deviceId: { exact: that.deviceId } };
       }
-      const localStream = await navigator.mediaDevices.getUserMedia(
-        constraints
-      );
-      this.log("opened", localStream);
-      this.joinedRoom(localStream, true, false);
+      this.localStream = await navigator.mediaDevices.getUserMedia(constraints);
+      this.log("opened", this.localStream);
+      this.joinedRoom(this.localStream, true, false);
       this.signalClient.once("discover", (discoveryData) => {
         that.log("discovered", discoveryData);
         async function connectToPeer(peerID) {
