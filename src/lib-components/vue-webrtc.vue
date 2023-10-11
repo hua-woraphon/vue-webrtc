@@ -16,18 +16,6 @@
         :id="item.id"
       ></video>
     </div>
-
-    <div v-if="shareScreenList">
-      <video
-        controls
-        autoplay
-        playsinline
-        ref="videosShareScreen"
-        :height="cameraHeight"
-        :muted="shareScreenList.muted"
-        :id="shareScreenList.id"
-      ></video>
-    </div>
   </div>
 </template>
 
@@ -43,7 +31,6 @@ export default /*#__PURE__*/ defineComponent({
     return {
       signalClient: null,
       videoList: [],
-      shareScreenList: null,
       canvas: null,
       socket: null,
       localStream: null,
@@ -135,7 +122,7 @@ export default /*#__PURE__*/ defineComponent({
             );
             that.videoList.forEach((v) => {
               if (v.isLocal) {
-                that.onPeer(peer, v.stream, false);
+                that.onPeer(peer, v.stream);
               }
             });
           } catch (e) {
@@ -151,25 +138,24 @@ export default /*#__PURE__*/ defineComponent({
         that.log("accepted", peer);
         that.videoList.forEach((v) => {
           if (v.isLocal) {
-            that.onPeer(peer, v.stream, false);
+            that.onPeer(peer, v.stream);
           }
         });
       });
       this.signalClient.discover(that.roomId);
     },
-    onPeer(peer, localStream, shareScreen) {
+    onPeer(peer, localStream) {
       var that = this;
       that.log("onPeer");
       peer.addStream(localStream);
       peer.on("stream", (remoteStream) => {
-        that.joinedRoom(remoteStream, false, true);
+        that.joinedRoom(remoteStream, false);
         peer.on("close", () => {
           var newList = [];
-
-          that.log("stream: ", remoteStream);
-
           that.videoList.forEach(function (item) {
-            newList.push(item);
+            if (item.id !== remoteStream.id) {
+              newList.push(item);
+            }
           });
           that.videoList = newList;
           that.$emit("left-room", remoteStream.id);
@@ -179,7 +165,7 @@ export default /*#__PURE__*/ defineComponent({
         });
       });
     },
-    joinedRoom(stream, isLocal, shareScreen) {
+    joinedRoom(stream, isLocal) {
       var that = this;
       let found = that.videoList.find((video) => {
         return video.id === stream.id;
@@ -190,14 +176,9 @@ export default /*#__PURE__*/ defineComponent({
           muted: isLocal,
           stream: stream,
           isLocal: isLocal,
-          shareScreen: shareScreen,
         };
 
-        if (!shareScreen) {
-          that.videoList.push(video);
-        } else {
-          that.shareScreenList = video;
-        }
+        that.videoList.push(video);
       }
 
       setTimeout(function () {
@@ -250,11 +231,9 @@ export default /*#__PURE__*/ defineComponent({
           video: true,
           audio: false,
         });
-        this.joinedRoom(screenStream, true, true);
+        this.joinedRoom(screenStream, true);
         that.$emit("share-started", screenStream.id);
-        that.signalClient
-          .peers()
-          .forEach((p) => that.onPeer(p, screenStream, true));
+        that.signalClient.peers().forEach((p) => that.onPeer(p, screenStream));
       } catch (e) {
         that.log("Media error: " + JSON.stringify(e));
       }
