@@ -34,6 +34,7 @@ export default /*#__PURE__*/ defineComponent({
       canvas: null,
       socket: null,
       localStream: null,
+      localScreenStream: null,
     };
   },
   props: {
@@ -227,13 +228,15 @@ export default /*#__PURE__*/ defineComponent({
       }
 
       try {
-        var screenStream = await navigator.mediaDevices.getDisplayMedia({
+        this.localScreenStream = await navigator.mediaDevices.getDisplayMedia({
           video: true,
           audio: false,
         });
-        this.joinedRoom(screenStream, true);
-        that.$emit("share-started", screenStream.id);
-        that.signalClient.peers().forEach((p) => that.onPeer(p, screenStream));
+        this.joinedRoom(this.localScreenStream, true);
+        that.$emit("share-started", this.localScreenStream.id);
+        that.signalClient
+          .peers()
+          .forEach((p) => that.onPeer(p, this.localScreenStream));
       } catch (e) {
         that.log("Media error: " + JSON.stringify(e));
       }

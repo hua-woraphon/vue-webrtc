@@ -9275,7 +9275,8 @@ var script$1 = /*#__PURE__*/vue.defineComponent({
       videoList: [],
       canvas: null,
       socket: null,
-      localStream: null
+      localStream: null,
+      localScreenStream: null
     };
   },
   props: {
@@ -9531,7 +9532,7 @@ var script$1 = /*#__PURE__*/vue.defineComponent({
     shareScreen: function shareScreen() {
       var _this2 = this;
       return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee4() {
-        var that, screenStream;
+        var that;
         return _regeneratorRuntime().wrap(function _callee4$(_context4) {
           while (1) switch (_context4.prev = _context4.next) {
             case 0:
@@ -9550,11 +9551,11 @@ var script$1 = /*#__PURE__*/vue.defineComponent({
                 audio: false
               });
             case 7:
-              screenStream = _context4.sent;
-              _this2.joinedRoom(screenStream, true);
-              that.$emit("share-started", screenStream.id);
+              _this2.localScreenStream = _context4.sent;
+              _this2.joinedRoom(_this2.localScreenStream, true);
+              that.$emit("share-started", _this2.localScreenStream.id);
               that.signalClient.peers().forEach(function (p) {
-                return that.onPeer(p, screenStream);
+                return that.onPeer(p, _this2.localScreenStream);
               });
               _context4.next = 16;
               break;
@@ -9625,9 +9626,9 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
   } else {
     style.appendChild(document.createTextNode(css));
   }
-}var css_248z$1 = "\n.video-list[data-v-35ae4e52] {\n  background: whitesmoke;\n  height: auto;\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  flex-wrap: wrap;\n}\n.video-list div[data-v-35ae4e52] {\n  padding: 0px;\n}\n.video-item[data-v-35ae4e52] {\n  background: #c5c4c4;\n  display: inline-block;\n}\n";
+}var css_248z$1 = "\n.video-list[data-v-bd3bcb5c] {\n  background: whitesmoke;\n  height: auto;\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  flex-wrap: wrap;\n}\n.video-list div[data-v-bd3bcb5c] {\n  padding: 0px;\n}\n.video-item[data-v-bd3bcb5c] {\n  background: #c5c4c4;\n  display: inline-block;\n}\n";
 styleInject(css_248z$1);script$1.render = render$1;
-script$1.__scopeId = "data-v-35ae4e52";var script = /*#__PURE__*/vue.defineComponent({
+script$1.__scopeId = "data-v-bd3bcb5c";var script = /*#__PURE__*/vue.defineComponent({
   name: 'VueWebrtcSample',
   // vue component name
   data: function data() {

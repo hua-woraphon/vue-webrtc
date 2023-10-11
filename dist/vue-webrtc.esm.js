@@ -9034,7 +9034,8 @@ var script$1 = /*#__PURE__*/defineComponent({
       videoList: [],
       canvas: null,
       socket: null,
-      localStream: null
+      localStream: null,
+      localScreenStream: null
     };
   },
   props: {
@@ -9232,13 +9233,13 @@ var script$1 = /*#__PURE__*/defineComponent({
         return;
       }
       try {
-        var screenStream = await navigator.mediaDevices.getDisplayMedia({
+        this.localScreenStream = await navigator.mediaDevices.getDisplayMedia({
           video: true,
           audio: false
         });
-        this.joinedRoom(screenStream, true);
-        that.$emit("share-started", screenStream.id);
-        that.signalClient.peers().forEach(p => that.onPeer(p, screenStream));
+        this.joinedRoom(this.localScreenStream, true);
+        that.$emit("share-started", this.localScreenStream.id);
+        that.signalClient.peers().forEach(p => that.onPeer(p, this.localScreenStream));
       } catch (e) {
         that.log("Media error: " + JSON.stringify(e));
       }
@@ -9305,11 +9306,11 @@ function styleInject(css, ref) {
   }
 }
 
-var css_248z$1 = "\n.video-list[data-v-35ae4e52] {\n  background: whitesmoke;\n  height: auto;\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  flex-wrap: wrap;\n}\n.video-list div[data-v-35ae4e52] {\n  padding: 0px;\n}\n.video-item[data-v-35ae4e52] {\n  background: #c5c4c4;\n  display: inline-block;\n}\n";
+var css_248z$1 = "\n.video-list[data-v-bd3bcb5c] {\n  background: whitesmoke;\n  height: auto;\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  flex-wrap: wrap;\n}\n.video-list div[data-v-bd3bcb5c] {\n  padding: 0px;\n}\n.video-item[data-v-bd3bcb5c] {\n  background: #c5c4c4;\n  display: inline-block;\n}\n";
 styleInject(css_248z$1);
 
 script$1.render = render$1;
-script$1.__scopeId = "data-v-35ae4e52";
+script$1.__scopeId = "data-v-bd3bcb5c";
 
 var script = /*#__PURE__*/defineComponent({
   name: 'VueWebrtcSample',
