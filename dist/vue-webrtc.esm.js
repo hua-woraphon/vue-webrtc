@@ -9193,10 +9193,12 @@ var script$1 = /*#__PURE__*/defineComponent({
         that.videoList.push(video);
       }
       setTimeout(function () {
-        for (var i = 0, len = that.$refs.videos.length; i < len; i++) {
-          if (that.$refs.videos[i].id === stream.id) {
-            that.$refs.videos[i].srcObject = stream;
-            break;
+        if (that.$refs.videos && that.$refs.videos.length > 0) {
+          for (var i = 0, len = that.$refs.videos.length; i < len; i++) {
+            if (that.$refs.videos[i].id === stream.id) {
+              that.$refs.videos[i].srcObject = stream;
+              break;
+            }
           }
         }
       }, 1000);
@@ -9310,11 +9312,11 @@ function styleInject(css, ref) {
   }
 }
 
-var css_248z$1 = "\n.video-list[data-v-73088836] {\r\n  background: whitesmoke;\r\n  height: auto;\r\n  display: flex;\r\n  flex-direction: row;\r\n  justify-content: center;\r\n  flex-wrap: wrap;\n}\n.video-list div[data-v-73088836] {\r\n  padding: 0px;\n}\n.video-item[data-v-73088836] {\r\n  background: #c5c4c4;\r\n  display: inline-block;\n}\r\n";
+var css_248z$1 = "\n.video-list[data-v-08e9521d] {\r\n  background: whitesmoke;\r\n  height: auto;\r\n  display: flex;\r\n  flex-direction: row;\r\n  justify-content: center;\r\n  flex-wrap: wrap;\n}\n.video-list div[data-v-08e9521d] {\r\n  padding: 0px;\n}\n.video-item[data-v-08e9521d] {\r\n  background: #c5c4c4;\r\n  display: inline-block;\n}\r\n";
 styleInject(css_248z$1);
 
 script$1.render = render$1;
-script$1.__scopeId = "data-v-73088836";
+script$1.__scopeId = "data-v-08e9521d";
 
 var script = /*#__PURE__*/defineComponent({
   name: 'VueWebrtcSample',
