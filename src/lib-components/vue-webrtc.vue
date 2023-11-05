@@ -111,7 +111,9 @@ export default /*#__PURE__*/ defineComponent({
       this.log("opened", this.localStream);
 
       let videoTrack = this.localStream.getVideoTracks();
-      videoTrack[0].enabled = false;
+      if (videoTrack && videoTrack.length > 0) {
+        videoTrack[0].enabled = false;
+      }
 
       this.joinedRoom(this.localStream, true, false);
       this.signalClient.once("discover", (discoveryData) => {
