@@ -9343,7 +9343,7 @@ var script$1 = /*#__PURE__*/vue.defineComponent({
     join: function join() {
       var _this = this;
       return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3() {
-        var that, constraints;
+        var that, constraints, videoTrack;
         return _regeneratorRuntime().wrap(function _callee3$(_context3) {
           while (1) switch (_context3.prev = _context3.next) {
             case 0:
@@ -9367,6 +9367,10 @@ var script$1 = /*#__PURE__*/vue.defineComponent({
             case 8:
               _this.localStream = _context3.sent;
               _this.log("opened", _this.localStream);
+              videoTrack = _this.localStream.getVideoTracks();
+              if (videoTrack && videoTrack.length > 0) {
+                videoTrack[0].enabled = false;
+              }
               _this.joinedRoom(_this.localStream, true, false);
               _this.signalClient.once("discover", function (discoveryData) {
                 that.log("discovered", discoveryData);
@@ -9445,7 +9449,7 @@ var script$1 = /*#__PURE__*/vue.defineComponent({
                 };
               }());
               _this.signalClient.discover(that.roomId);
-            case 14:
+            case 16:
             case "end":
               return _context3.stop();
           }
@@ -9626,9 +9630,9 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
   } else {
     style.appendChild(document.createTextNode(css));
   }
-}var css_248z$1 = "\n.video-list[data-v-bd3bcb5c] {\n  background: whitesmoke;\n  height: auto;\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  flex-wrap: wrap;\n}\n.video-list div[data-v-bd3bcb5c] {\n  padding: 0px;\n}\n.video-item[data-v-bd3bcb5c] {\n  background: #c5c4c4;\n  display: inline-block;\n}\n";
+}var css_248z$1 = "\n.video-list[data-v-73088836] {\r\n  background: whitesmoke;\r\n  height: auto;\r\n  display: flex;\r\n  flex-direction: row;\r\n  justify-content: center;\r\n  flex-wrap: wrap;\n}\n.video-list div[data-v-73088836] {\r\n  padding: 0px;\n}\n.video-item[data-v-73088836] {\r\n  background: #c5c4c4;\r\n  display: inline-block;\n}\r\n";
 styleInject(css_248z$1);script$1.render = render$1;
-script$1.__scopeId = "data-v-bd3bcb5c";var script = /*#__PURE__*/vue.defineComponent({
+script$1.__scopeId = "data-v-73088836";var script = /*#__PURE__*/vue.defineComponent({
   name: 'VueWebrtcSample',
   // vue component name
   data: function data() {
@@ -9692,9 +9696,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return _ctx.reset && _ctx.reset.apply(_ctx, arguments);
     })
   }, " Reset ")]);
-}var css_248z = "\n.vue-webrtc-sample[data-v-45861803] {\n    display: block;\n    width: 400px;\n    margin: 25px auto;\n    border: 1px solid #ccc;\n    background: #eaeaea;\n    text-align: center;\n    padding: 25px;\n}\n.vue-webrtc-sample p[data-v-45861803] {\n    margin: 0 0 1em;\n}\n";
+}var css_248z = "\n.vue-webrtc-sample[data-v-3020e3b4] {\r\n    display: block;\r\n    width: 400px;\r\n    margin: 25px auto;\r\n    border: 1px solid #ccc;\r\n    background: #eaeaea;\r\n    text-align: center;\r\n    padding: 25px;\n}\n.vue-webrtc-sample p[data-v-3020e3b4] {\r\n    margin: 0 0 1em;\n}\r\n";
 styleInject(css_248z);script.render = render;
-script.__scopeId = "data-v-45861803";/* eslint-disable import/prefer-default-export */
+script.__scopeId = "data-v-3020e3b4";/* eslint-disable import/prefer-default-export */
 window.io = io;var components$1=/*#__PURE__*/Object.freeze({__proto__:null,VueWebRTC:script$1,VueWebrtcSample:script});// install function executed by Vue.use()
 var install = function installVueWebrtc(app) {
   Object.entries(components$1).forEach(function (_ref) {
