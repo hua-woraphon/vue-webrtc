@@ -110,7 +110,7 @@ export default /*#__PURE__*/ defineComponent({
       this.localStream = await navigator.mediaDevices.getUserMedia(constraints);
       this.log("opened", this.localStream);
 
-      let videoTrack = localStream.getVideoTracks();
+      let videoTrack = this.localStream.getVideoTracks();
       videoTrack[0].enabled = false;
 
       this.joinedRoom(this.localStream, true, false);
