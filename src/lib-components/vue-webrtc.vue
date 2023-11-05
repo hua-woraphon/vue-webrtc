@@ -189,12 +189,10 @@ export default /*#__PURE__*/ defineComponent({
       }
 
       setTimeout(function () {
-        if (that.$refs.videos && that.$refs.videos.length > 0) {
-          for (var i = 0, len = that.$refs.videos.length; i < len; i++) {
-            if (that.$refs.videos[i].id === stream.id) {
-              that.$refs.videos[i].srcObject = stream;
-              break;
-            }
+        for (var i = 0, len = that.$refs.videos.length; i < len; i++) {
+          if (that.$refs.videos[i].id === stream.id) {
+            that.$refs.videos[i].srcObject = stream;
+            break;
           }
         }
       }, 1000);

@@ -9494,12 +9494,10 @@ var script$1 = /*#__PURE__*/vue.defineComponent({
         that.videoList.push(video);
       }
       setTimeout(function () {
-        if (that.$refs.videos && that.$refs.videos.length > 0) {
-          for (var i = 0, len = that.$refs.videos.length; i < len; i++) {
-            if (that.$refs.videos[i].id === stream.id) {
-              that.$refs.videos[i].srcObject = stream;
-              break;
-            }
+        for (var i = 0, len = that.$refs.videos.length; i < len; i++) {
+          if (that.$refs.videos[i].id === stream.id) {
+            that.$refs.videos[i].srcObject = stream;
+            break;
           }
         }
       }, 1000);
@@ -9634,9 +9632,9 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
   } else {
     style.appendChild(document.createTextNode(css));
   }
-}var css_248z$1 = "\n.video-list[data-v-668cb00e] {\r\n  background: whitesmoke;\r\n  height: auto;\r\n  display: flex;\r\n  flex-direction: row;\r\n  justify-content: center;\r\n  flex-wrap: wrap;\n}\n.video-list div[data-v-668cb00e] {\r\n  padding: 0px;\n}\n.video-item[data-v-668cb00e] {\r\n  background: #c5c4c4;\r\n  display: inline-block;\n}\r\n";
+}var css_248z$1 = "\n.video-list[data-v-3faf0689] {\r\n  background: whitesmoke;\r\n  height: auto;\r\n  display: flex;\r\n  flex-direction: row;\r\n  justify-content: center;\r\n  flex-wrap: wrap;\n}\n.video-list div[data-v-3faf0689] {\r\n  padding: 0px;\n}\n.video-item[data-v-3faf0689] {\r\n  background: #c5c4c4;\r\n  display: inline-block;\n}\r\n";
 styleInject(css_248z$1);script$1.render = render$1;
-script$1.__scopeId = "data-v-668cb00e";var script = /*#__PURE__*/vue.defineComponent({
+script$1.__scopeId = "data-v-3faf0689";var script = /*#__PURE__*/vue.defineComponent({
   name: 'VueWebrtcSample',
   // vue component name
   data: function data() {
