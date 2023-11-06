@@ -9117,12 +9117,10 @@ var script$1 = /*#__PURE__*/defineComponent({
       }
       this.localStream = await navigator.mediaDevices.getUserMedia(constraints);
       this.log("opened", this.localStream);
-
-      // let videoTrack = this.localStream.getVideoTracks();
-      // if (videoTrack && videoTrack.length > 0) {
-      //   videoTrack[0].enabled = false;
-      // }
-
+      let videoTrack = this.localStream.getVideoTracks();
+      if (videoTrack && videoTrack.length > 0) {
+        videoTrack[0].enabled = false;
+      }
       this.joinedRoom(this.localStream, true, false);
       this.signalClient.once("discover", discoveryData => {
         that.log("discovered", discoveryData);
@@ -9312,11 +9310,11 @@ function styleInject(css, ref) {
   }
 }
 
-var css_248z$1 = "\n.video-list[data-v-3faf0689] {\r\n  background: whitesmoke;\r\n  height: auto;\r\n  display: flex;\r\n  flex-direction: row;\r\n  justify-content: center;\r\n  flex-wrap: wrap;\n}\n.video-list div[data-v-3faf0689] {\r\n  padding: 0px;\n}\n.video-item[data-v-3faf0689] {\r\n  background: #c5c4c4;\r\n  display: inline-block;\n}\r\n";
+var css_248z$1 = "\n.video-list[data-v-73088836] {\r\n  background: whitesmoke;\r\n  height: auto;\r\n  display: flex;\r\n  flex-direction: row;\r\n  justify-content: center;\r\n  flex-wrap: wrap;\n}\n.video-list div[data-v-73088836] {\r\n  padding: 0px;\n}\n.video-item[data-v-73088836] {\r\n  background: #c5c4c4;\r\n  display: inline-block;\n}\r\n";
 styleInject(css_248z$1);
 
 script$1.render = render$1;
-script$1.__scopeId = "data-v-3faf0689";
+script$1.__scopeId = "data-v-73088836";
 
 var script = /*#__PURE__*/defineComponent({
   name: 'VueWebrtcSample',
