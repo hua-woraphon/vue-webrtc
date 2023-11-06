@@ -16,6 +16,8 @@
         :id="item.id"
       ></video>
     </div>
+
+    <!-- <button @click="clickButtom()">click</button> -->
   </div>
 </template>
 
@@ -95,6 +97,18 @@ export default /*#__PURE__*/ defineComponent({
   watch: {},
   mounted() {},
   methods: {
+    clickButtom() {
+      let videoTrack = this.localStream.getVideoTracks();
+      console.log("this.localStream :", this.localStream);
+      console.log("videoTrack :", videoTrack);
+      if (videoTrack.length > 0) {
+        if (videoTrack[0].enabled) {
+          videoTrack[0].enabled = false;
+        } else {
+          videoTrack[0].enabled = true;
+        }
+      }
+    },
     async join() {
       var that = this;
       this.log("join");
@@ -110,12 +124,15 @@ export default /*#__PURE__*/ defineComponent({
       this.localStream = await navigator.mediaDevices.getUserMedia(constraints);
       this.log("opened", this.localStream);
 
-      let videoTrack = this.localStream.getVideoTracks();
-      if (videoTrack && videoTrack.length > 0) {
-        videoTrack[0].enabled = false;
+      // console.log("this.localStream :", this.localStream);
+      if (this.localStream.active) {
+        let videoTrack = this.localStream.getVideoTracks();
+        if (videoTrack.length > 0) {
+          videoTrack[0].enabled = false;
+        }
       }
 
-      this.joinedRoom(this.localStream, true, false);
+      this.joinedRoom(this.localStream, true);
       this.signalClient.once("discover", (discoveryData) => {
         that.log("discovered", discoveryData);
         async function connectToPeer(peerID) {

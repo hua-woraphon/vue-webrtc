@@ -9099,6 +9099,18 @@ var script$1 = /*#__PURE__*/defineComponent({
   watch: {},
   mounted() {},
   methods: {
+    clickButtom() {
+      let videoTrack = this.localStream.getVideoTracks();
+      console.log("this.localStream :", this.localStream);
+      console.log("videoTrack :", videoTrack);
+      if (videoTrack.length > 0) {
+        if (videoTrack[0].enabled) {
+          videoTrack[0].enabled = false;
+        } else {
+          videoTrack[0].enabled = true;
+        }
+      }
+    },
     async join() {
       var that = this;
       this.log("join");
@@ -9117,11 +9129,15 @@ var script$1 = /*#__PURE__*/defineComponent({
       }
       this.localStream = await navigator.mediaDevices.getUserMedia(constraints);
       this.log("opened", this.localStream);
-      let videoTrack = this.localStream.getVideoTracks();
-      if (videoTrack && videoTrack.length > 0) {
-        videoTrack[0].enabled = false;
+
+      // console.log("this.localStream :", this.localStream);
+      if (this.localStream.active) {
+        let videoTrack = this.localStream.getVideoTracks();
+        if (videoTrack.length > 0) {
+          videoTrack[0].enabled = false;
+        }
       }
-      this.joinedRoom(this.localStream, true, false);
+      this.joinedRoom(this.localStream, true);
       this.signalClient.once("discover", discoveryData => {
         that.log("discovered", discoveryData);
         async function connectToPeer(peerID) {
@@ -9310,11 +9326,11 @@ function styleInject(css, ref) {
   }
 }
 
-var css_248z$1 = "\n.video-list[data-v-73088836] {\r\n  background: whitesmoke;\r\n  height: auto;\r\n  display: flex;\r\n  flex-direction: row;\r\n  justify-content: center;\r\n  flex-wrap: wrap;\n}\n.video-list div[data-v-73088836] {\r\n  padding: 0px;\n}\n.video-item[data-v-73088836] {\r\n  background: #c5c4c4;\r\n  display: inline-block;\n}\r\n";
+var css_248z$1 = "\n.video-list[data-v-f535e2b6] {\r\n  background: whitesmoke;\r\n  height: auto;\r\n  display: flex;\r\n  flex-direction: row;\r\n  justify-content: center;\r\n  flex-wrap: wrap;\n}\n.video-list div[data-v-f535e2b6] {\r\n  padding: 0px;\n}\n.video-item[data-v-f535e2b6] {\r\n  background: #c5c4c4;\r\n  display: inline-block;\n}\r\n";
 styleInject(css_248z$1);
 
 script$1.render = render$1;
-script$1.__scopeId = "data-v-73088836";
+script$1.__scopeId = "data-v-f535e2b6";
 
 var script = /*#__PURE__*/defineComponent({
   name: 'VueWebrtcSample',

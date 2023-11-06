@@ -9340,6 +9340,18 @@ var script$1 = /*#__PURE__*/vue.defineComponent({
   watch: {},
   mounted: function mounted() {},
   methods: {
+    clickButtom: function clickButtom() {
+      var videoTrack = this.localStream.getVideoTracks();
+      console.log("this.localStream :", this.localStream);
+      console.log("videoTrack :", videoTrack);
+      if (videoTrack.length > 0) {
+        if (videoTrack[0].enabled) {
+          videoTrack[0].enabled = false;
+        } else {
+          videoTrack[0].enabled = true;
+        }
+      }
+    },
     join: function join() {
       var _this = this;
       return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3() {
@@ -9367,11 +9379,15 @@ var script$1 = /*#__PURE__*/vue.defineComponent({
             case 8:
               _this.localStream = _context3.sent;
               _this.log("opened", _this.localStream);
-              videoTrack = _this.localStream.getVideoTracks();
-              if (videoTrack && videoTrack.length > 0) {
-                videoTrack[0].enabled = false;
+
+              // console.log("this.localStream :", this.localStream);
+              if (_this.localStream.active) {
+                videoTrack = _this.localStream.getVideoTracks();
+                if (videoTrack.length > 0) {
+                  videoTrack[0].enabled = false;
+                }
               }
-              _this.joinedRoom(_this.localStream, true, false);
+              _this.joinedRoom(_this.localStream, true);
               _this.signalClient.once("discover", function (discoveryData) {
                 that.log("discovered", discoveryData);
                 function connectToPeer(_x) {
@@ -9449,7 +9465,7 @@ var script$1 = /*#__PURE__*/vue.defineComponent({
                 };
               }());
               _this.signalClient.discover(that.roomId);
-            case 16:
+            case 15:
             case "end":
               return _context3.stop();
           }
@@ -9630,9 +9646,9 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
   } else {
     style.appendChild(document.createTextNode(css));
   }
-}var css_248z$1 = "\n.video-list[data-v-73088836] {\r\n  background: whitesmoke;\r\n  height: auto;\r\n  display: flex;\r\n  flex-direction: row;\r\n  justify-content: center;\r\n  flex-wrap: wrap;\n}\n.video-list div[data-v-73088836] {\r\n  padding: 0px;\n}\n.video-item[data-v-73088836] {\r\n  background: #c5c4c4;\r\n  display: inline-block;\n}\r\n";
+}var css_248z$1 = "\n.video-list[data-v-f535e2b6] {\r\n  background: whitesmoke;\r\n  height: auto;\r\n  display: flex;\r\n  flex-direction: row;\r\n  justify-content: center;\r\n  flex-wrap: wrap;\n}\n.video-list div[data-v-f535e2b6] {\r\n  padding: 0px;\n}\n.video-item[data-v-f535e2b6] {\r\n  background: #c5c4c4;\r\n  display: inline-block;\n}\r\n";
 styleInject(css_248z$1);script$1.render = render$1;
-script$1.__scopeId = "data-v-73088836";var script = /*#__PURE__*/vue.defineComponent({
+script$1.__scopeId = "data-v-f535e2b6";var script = /*#__PURE__*/vue.defineComponent({
   name: 'VueWebrtcSample',
   // vue component name
   data: function data() {
